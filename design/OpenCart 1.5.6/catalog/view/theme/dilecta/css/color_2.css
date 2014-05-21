@@ -1,0 +1,56 @@
+a:hover, header .top .top-right #cart_block .content ul.items-in-shopping-cart li .price, header .top .top-right #cart_block .content ul.items-in-shopping-cart li .price, header .top .top-right .language-currency .switcher .option ul li a:hover, .navigation_container nav > ul > li:hover > a, .navigation_container nav > ul > li > .sub-menu > ul > li:hover > a, .navigation_container nav > ul > li > .sub-menu > ul > li > .sub-menu a:hover, .navigation_container nav > ul > li > .sub-menu > ul > li > .sub-menu a:hover, .products-grid > div .price, ul.tweet_list li .tweet_text a, header .top .top-right #cart_block .content .saldo-action .saldo ul li span { color:#7303b0; }
+header .top .top-right #cart_block .content ul.items-in-shopping-cart li .close:hover { background-color:#7303b0; }
+
+header .top .top-right #cart_block .content, header .top .top-right .language-currency .switcher .option ul, .navigation_container nav > ul > li > .sub-menu { border-top:5px solid #7303b0; }
+.navigation_container nav > ul > li > .sub-menu .sub-menu { border-left:5px solid #7303b0; }
+
+/* Header -> Top -> Top Right -> Wishlist */
+
+header .top .top-right .wishlist { background-color:#ae63d8; }
+header .top .top-right .wishlist:hover { background-color:#c07ce6; }
+
+/* Header -> Top -> Top Right -> Cart */
+
+header .top .top-right #cart_block { background-color:#7303b0; }
+header .top .top-right #cart_block:hover { background-color:#8815c7; }
+
+/* Navigation -> Search */
+
+.navigation_container .search input.enterkey:focus { border:1px solid #7303b0; }
+
+.button { background:#7303b0; }
+.button:hover { background:#8311c1; }
+.button-two, .buttons .left .button, .buttons .center .button { background:#ae63d8; }
+.button-two:hover, .buttons .left .button:hover, .buttons .center .button:hover { background:#c07ce6; }
+.button-slider { background:#7303b0; }
+.button-slider:hover { background:#8311c1; }
+.button-slider2 { background:#ae63d8; }
+.button-slider2:hover { background:#c07ce6; }
+
+/* Product hover */
+
+.products-grid > div:hover { border:1px solid #7303b0; }
+
+/* Add to Cart */
+
+.products-grid > div .on-hover .add-to-cart { background-color:#7303b0; }
+.products-grid > div .on-hover .add-to-cart:hover { background-color:#8815c7; }
+
+
+.products-grid > div .sale, .product-list > div .sale { background:#7303b0; }
+div.notification { border-top:5px solid #7303b0; }
+div.notification a { color:#7303b0; }
+div.notification .close:hover { background-color:#7303b0; }
+.cart-total td.right { color:#7303b0; }
+.cart-info tbody .price, .cart-info tbody .total { color:#7303b0; }
+.cart-module > div, .product-info .custom-block-product { border-top:5px solid #7303b0; }
+.product-info .right .price p { color:#7303b0; }
+input[type=text]:focus, input[type=password]:focus, textarea:focus { border:1px solid #7303b0; }
+.product-info .right .add-to-cart { background-color:#7303b0; }
+.product-info .right .add-to-cart:hover { background-color:#8815c7; }
+.box-category ul li a.active { color:#7303b0; }
+.product-list > div:hover { border:1px solid #7303b0; }
+.product-list > div .price { color:#7303b0; }
+.product-list > div .cart a { background-color:#7303b0; }
+.product-list > div .cart a:hover { background-color:#8815c7; }
+.checkout-product tfoot .total { color:#7303b0; }

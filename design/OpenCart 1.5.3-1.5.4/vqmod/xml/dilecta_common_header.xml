@@ -1,0 +1,127 @@
+<modification>
+
+	<id>Dilecta header</id>
+	<version>1.0.0</version>
+	<vqmver>2.1</vqmver>
+	<author>Tiquet</author>
+		
+	<file name="catalog/controller/common/header.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$this->data['text_wishlist']
+			]]></search>
+			<add><![CDATA[
+				$this->data['text_wishlist2'] = sprintf((isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
+				]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[
+			$this->data['text_wishlist']
+			]]></search>
+			<add><![CDATA[
+				$this->data['link_login'] = $this->url->link('account/login', '', 'SSL');
+				$this->data['link_register'] = $this->url->link('account/register', '', 'SSL');
+				$this->data['link_logout'] = $this->url->link('account/logout', '', 'SSL');
+				$znalezione = false;
+				preg_match_all("/<a(.*?)</is", $this->language->get('text_welcome'), $znalezione);
+				$this->data['text_register'] = ucfirst(str_replace(' href="%s">', '', $znalezione[1][1]));
+				$this->data['text_login'] = ucfirst(str_replace(' href="%s">', '', $znalezione[1][0]));
+				$znalezione1 = false;
+				preg_match_all("/<a(.*?)</is", $this->language->get('text_logged'), $znalezione1);
+				$this->data['text_logout'] = ucfirst(str_replace(' href="%s">', '', $znalezione1[1][1]));
+				]]></add>
+		</operation>
+	</file>
+	<file name="catalog/view/theme/dilecta/template/common/header.tpl">
+		<operation>
+			<search position="replace"><![CDATA[
+			<!-- Wishlist --><div class="wishlist"><a href="#">0</a></div>
+			]]></search>
+			<add><![CDATA[
+			<!-- Wishlist --><div class="wishlist"><a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist2; ?></a></div>					
+				]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[
+			<li><a href="#">Login</a></li>
+			]]></search>
+			<add><![CDATA[
+			<?php if (!$logged) { ?>
+			<li><a href="<?php echo $link_login; ?>"><?php echo $text_login; ?></a></li>		
+			<?php } ?>
+				]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[
+			<li><a href="#">Create an account</a></li>
+			]]></search>
+			<add><![CDATA[
+			<?php if (!$logged) { ?>
+			<li><a href="<?php echo $link_register; ?>"><?php echo $text_register; ?></a></li>		
+			<?php } else { ?>
+			<li><a href="<?php echo $link_logout; ?>"><?php echo $text_logout; ?></a></li>		
+			<?php } ?>
+				]]></add>
+		</operation>
+	</file>
+	<file name="catalog/language/*/module/cart.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$_['text_items']
+			]]></search>
+			<add><![CDATA[
+				$_['text_items']    = '%s<span style="display:none">%s</span>';
+				]]></add>
+		</operation>
+	</file>	
+	<file name="catalog/controller/common/header.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$children_data[] = array(
+			]]></search>
+			<add><![CDATA[
+				'category_id' => $child['category_id'],
+				]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[
+			$this->data['categories'][] = array(
+			]]></search>
+			<add><![CDATA[
+				'category_id' => $category['category_id'],
+				]]></add>
+		</operation>
+	</file>
+	<file name="catalog/view/theme/dilecta/template/common/header.tpl">
+		<operation>
+			<search position="replace"><![CDATA[
+			<li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a></li>
+			]]></search>
+			<add><![CDATA[
+						<li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a>
+							<?php $categories_2 = $this->model_catalog_category->getCategories($category['children'][$i]['category_id']);
+							if($categories_2) { ?>
+							
+							<br />
+							<!-- SubMenu -->
+							
+							<div class="sub-menu">
+								<div class="arrow-categories"></div>
+								<ul>
+									
+									<?php foreach ($categories_2 as $category_2) { ?>
+									<li><a href="<?php echo $this->url->link('product/category', 'path='.$category['category_id'].'_' . $category['children'][$i]['category_id'] . '_' . $category_2['category_id']); ?>"><?php echo $category_2['name']; ?></a></li>
+									<?php } ?>	
+								
+								</ul>
+							</div>
+							
+							<!-- End SubMenu -->
+							
+							<?php } ?>
+						</li>							
+				]]></add>
+		</operation>
+	</file>
+
+</modification>

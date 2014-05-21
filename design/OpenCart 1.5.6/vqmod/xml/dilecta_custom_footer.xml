@@ -1,0 +1,19 @@
+<modification>
+
+	<id>Dilecta custom footer</id>
+	<version>1.0.0</version>
+	<vqmver>2.1</vqmver>
+	<author>Tiquet</author>
+	
+	<file name="catalog/controller/common/footer.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$this->data['contact'] = $this->url->link('information/contact');
+			]]></search>
+			<add><![CDATA[
+        	$this->data['language_id'] = (int)$this->config->get('config_language_id');
+				]]></add>
+		</operation>
+	</file>
+	
+</modification>

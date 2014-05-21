@@ -1,0 +1,12 @@
+2014-05-14 10:00:51 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\footer.tpl on line 5
+2014-05-14 10:00:51 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\footer.tpl on line 5
+2014-05-14 10:01:17 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\footer.tpl on line 6
+2014-05-14 10:01:51 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\footer.tpl on line 6
+2014-05-14 10:10:48 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\footer.tpl on line 6
+2014-05-14 10:20:42 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\footer.tpl on line 6
+2014-05-14 10:22:58 - PHP Notice:  Array to string conversion in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\footer.tpl on line 6
+2014-05-14 10:24:12 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\footer.tpl on line 6
+2014-05-14 10:46:29 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\header.tpl on line 7
+2014-05-14 10:48:57 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\header.tpl on line 7
+2014-05-14 10:51:44 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\header.tpl on line 7
+2014-05-21 7:34:01 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\home.tpl on line 8

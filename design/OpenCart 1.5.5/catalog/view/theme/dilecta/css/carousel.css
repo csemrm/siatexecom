@@ -1,0 +1,65 @@
+.jcarousel-skin-dilecta { 
+	clear:both;
+	margin:48px 10px 0px 10px;
+	padding:19px 19px 13px 19px;
+	background:#fff;border:1px solid #e6e6e6;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-moz-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.03);-webkit-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.03);box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.03);
+}
+
+.grid-1 .jcarousel-skin-dilecta, .grid-2 .jcarousel-skin-dilecta, .grid-3 .jcarousel-skin-dilecta, .grid-4 .jcarousel-skin-dilecta, .grid-5 .jcarousel-skin-dilecta, .grid-6 .jcarousel-skin-dilecta, .grid-7 .jcarousel-skin-dilecta, .grid-8 .jcarousel-skin-dilecta, .grid-9 .jcarousel-skin-dilecta, .grid-10 .jcarousel-skin-dilecta, .grid-111 .jcarousel-skin-dilecta, .grid-12 .jcarousel-skin-dilecta { margin-left:0px;margin-right:0px; }
+
+@media only screen and (max-width: 960px) {
+
+	.jcarousel-skin-dilecta { margin-left:0px;margin-right:0px; }
+	.jcarousel-skin-dilecta img { width:50%; }
+	
+}
+
+.jcarousel-skin-dilecta .jcarousel-direction-rtl {
+	direction: rtl;
+}
+.jcarousel-skin-dilecta .jcarousel-container-horizontal {
+	padding: 0px 40px;
+}
+.jcarousel-skin-dilecta .jcarousel-clip {
+	overflow: hidden;
+	width: 100%;
+}
+.jcarousel-skin-dilecta .jcarousel-clip-horizontal {
+}
+.jcarousel-skin-dilecta .jcarousel-item {
+	text-align: center;
+}
+.jcarousel-skin-dilecta .jcarousel-item-horizontal {
+	margin-left: 0;
+	margin-right: 10px;
+}
+.jcarousel-skin-dilecta .jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+	margin-right: 0;
+}
+.jcarousel-skin-dilecta .jcarousel-item-placeholder {
+	background: #fff;
+	color: #000;
+}
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-dilecta .jcarousel-next-horizontal {
+	position: absolute;
+	top:50%;
+	margin-top:-18px;
+	right: 0px;
+	cursor:pointer;
+width:30px;height:30px;background:#fff url(../img/next-products.png) 13px 11px no-repeat;border:1px solid #e6e6e6;transition: background-color 0.4s;-webkit-transition: background-color 0.4s;-moz-transition: background-color 0.4s;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-moz-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.05);-webkit-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.05);box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.05);
+}
+.jcarousel-skin-dilecta .jcarousel-next-horizontal:hover { background-color:#e6e6e6; }
+
+.jcarousel-skin-dilecta .jcarousel-prev-horizontal {
+	position: absolute;
+	top:50%;
+	margin-top:-18px;
+	left: 0px;
+	cursor:pointer;
+width:30px;height:30px;background:#fff url(../img/prev-products.png) 13px 11px no-repeat;border:1px solid #e6e6e6;transition: background-color 0.4s;-webkit-transition: background-color 0.4s;-moz-transition: background-color 0.4s;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-moz-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.05);-webkit-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.05);box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.05);
+}
+.jcarousel-skin-dilecta .jcarousel-prev-horizontal:hover { background-color:#e6e6e6; }
