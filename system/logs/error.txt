@@ -10,3 +10,5 @@
 2014-05-14 10:48:57 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\header.tpl on line 7
 2014-05-14 10:51:44 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\header.tpl on line 7
 2014-05-21 7:34:01 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\home.tpl on line 8
+2014-05-21 7:37:56 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\home.tpl on line 8
+2014-05-21 7:38:36 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\home.tpl on line 8

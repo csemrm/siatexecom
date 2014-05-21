@@ -5,7 +5,7 @@
 
 	
 	<?php 
-		echo $language_id;
+		
 	if(isset($language_id)) { 
 						
 		if($this->config->get('responsive_banner_general_status') == '1' && $this->config->get('responsive_banner_position') == '0') { ?>

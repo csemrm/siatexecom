@@ -1,0 +1,27 @@
+<modification>
+
+	<id>Dilecta slider</id>
+	<version>1.0.0</version>
+	<vqmver>2.1</vqmver>
+	<author>Tiquet</author>
+	
+	<file name="catalog/controller/common/header.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$this->load->model('catalog/category');
+			]]></search>
+			<add><![CDATA[
+		$this->load->model('localisation/language');
+
+        $languages = $this->model_localisation_language->getLanguages();
+        foreach ($languages as $language) {
+            if ($language['code'] == $this->session->data['language']) {
+
+                $this->data['language_id'] = $language['language_id'];
+            }
+        }
+				]]></add>
+		</operation>
+	</file>
+	
+</modification>
