@@ -12,3 +12,8 @@
 2014-05-21 7:34:01 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\home.tpl on line 8
 2014-05-21 7:37:56 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\home.tpl on line 8
 2014-05-21 7:38:36 - PHP Notice:  Undefined variable: language_id in F:\project\siatexecom\catalog\view\theme\dilecta\template\common\home.tpl on line 8
+2014-05-21 9:28:52 - PHP Warning:  sprintf(): Too few arguments in F:\project\siatexecom\catalog\controller\common\footer.php on line 48
+2014-05-21 10:15:48 - PHP Notice:  Undefined index: contact2_phone in F:\project\siatexecom\admin\view\template\module\dilecta.tpl on line 1921
+2014-05-21 10:15:48 - PHP Notice:  Undefined index: contact2_phone2 in F:\project\siatexecom\admin\view\template\module\dilecta.tpl on line 1937
+2014-05-21 10:15:48 - PHP Notice:  Undefined index: contact2_email in F:\project\siatexecom\admin\view\template\module\dilecta.tpl on line 1985
+2014-05-21 10:15:48 - PHP Notice:  Undefined index: contact2_email2 in F:\project\siatexecom\admin\view\template\module\dilecta.tpl on line 2001

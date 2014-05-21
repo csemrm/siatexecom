@@ -1711,7 +1711,8 @@ function get_fonts() {
 								
 								<div id="tabs_<?php echo $language_id; ?>" class="htabs tabs-design">
 								
-									<a href="#tab_contact_<?php echo $language_id; ?>" class="tcontact"><span>Contact</span></a>
+									<a href="#tab_contact_<?php echo $language_id; ?>" class="tcontact"><span>Office</span></a>
+                                                                        <a href="#tab_contact2_<?php echo $language_id; ?>" class="tcontact"><span>Office 2</span></a>
 									<a href="#tab_aboutus_<?php echo $language_id; ?>" class="taboutus"><span>About us</span></a>
 									<a href="#tab_facebook_<?php echo $language_id; ?>" class="tfacebook"><span>Facebook</span></a>
 									<a href="#tab_twitter_<?php echo $language_id; ?>" class="ttwitter"><span>Twitter</span></a>
@@ -1735,7 +1736,7 @@ function get_fonts() {
 									<input name="customfooter[<?php echo $language_id; ?>][contact_status]" value="0" id="customfooter_<?php echo $language_id; ?>_contact_status" type="hidden" />
 									<?php } ?>
 									
-									<h4>Contact</h4>
+									<h4>Office</h4>
 									
 									<!-- Input -->
 									
@@ -1754,7 +1755,19 @@ function get_fonts() {
 									
 									<!-- End Input -->
 									<!-- Input -->
+									<div class="input">
 									
+										<p>Address</p>
+										<?php if(isset($customfooter[$language_id]['contact_address'])) { ?>
+										<textarea rows="0" cols="0" name="customfooter[<?php echo $language_id; ?>][contact_address]"><?php echo $customfooter[$language_id]['contact_address']; ?></textarea>
+                                                                               
+										<?php } else { ?>
+										<textarea rows="0" cols="0" name="customfooter[<?php echo $language_id; ?>][contact_address]"></textarea>
+										<?php } ?>
+									
+										<div class="clear"></div>
+									
+									</div>
 									<div class="input">
 									
 										<p>Phone</p>
@@ -1773,7 +1786,7 @@ function get_fonts() {
 									
 									<div class="input">
 									
-										<p>Phone 2</p>
+										<p>Fax</p>
 										<?php if(isset($customfooter[$language_id]['contact_phone2'])) { ?>
 										<input name="customfooter[<?php echo $language_id; ?>][contact_phone2]" value="<?php echo $customfooter[$language_id]['contact_phone2']; ?>" />
 										<?php } else { ?>
@@ -1854,7 +1867,153 @@ function get_fonts() {
 								
 								<!-- End TAB CONTACT -->
 								
-								<!-- TAB About us -->
+                                                                <!-- TAB CONTACT -->
+								
+								<div id="tab_contact2_<?php echo $language_id; ?>" class="tab-content4">
+								
+									<!-- Status -->
+									
+									<?php if(isset($customfooter[$language_id]['contact2_status'])) { ?>
+									<?php if($customfooter[$language_id]['contact2_status'] == 1) { echo '<div class="status status-on" title="1" rel="customfooter_'.$language_id.'_contact2_status"></div>'; } else { echo '<div class="status status-off" title="0" rel="customfooter_'.$language_id.'_contact2_status"></div>'; } ?>
+									
+									<input name="customfooter[<?php echo $language_id; ?>][contact2_status]" value="<?php echo $customfooter[$language_id]['contact2_status']; ?>" id="customfooter_<?php echo $language_id; ?>_contact2_status" type="hidden" />
+									<?php } else { ?>
+									<?php echo '<div class="status status-off" title="0" rel="customfooter_'.$language_id.'_contact2_status"></div>'; ?>
+									<input name="customfooter[<?php echo $language_id; ?>][contact2_status]" value="0" id="customfooter_<?php echo $language_id; ?>_contact2_status" type="hidden" />
+									<?php } ?>
+									
+									<h4>Office 2</h4>
+									
+									<!-- Input -->
+									
+									<div class="input">
+									
+										<p>Title</p>
+										<?php if(isset($customfooter[$language_id]['contact2_title'])) { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_title]" value="<?php echo $customfooter[$language_id]['contact2_title']; ?>" />
+										<?php } else { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_title]" value="" />
+										<?php } ?>
+									
+										<div class="clear"></div>
+									
+									</div>
+									
+									<!-- End Input -->
+									<!-- Input -->
+									<div class="input">
+									
+										<p>Address</p>
+										<?php if(isset($customfooter[$language_id]['contact2_address'])) { ?>
+										<textarea rows="0" cols="0" name="customfooter[<?php echo $language_id; ?>][contact2_address]"><?php echo $customfooter[$language_id]['contact2_address']; ?></textarea>
+                                                                               
+										<?php } else { ?>
+										<textarea rows="0" cols="0" name="customfooter[<?php echo $language_id; ?>][contact2_address]"></textarea>
+										<?php } ?>
+									
+										<div class="clear"></div>
+									
+									</div>
+									<div class="input">
+									
+										<p>Phone</p>
+										<?php if(isset($customfooter[$language_id]['contact_phone'])) { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_phone]" value="<?php echo $customfooter[$language_id]['contact2_phone']; ?>" />
+										<?php } else { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_phone]" value="" />
+										<?php } ?>
+									
+										<div class="clear"></div>
+									
+									</div>
+									
+									<!-- End Input -->
+									<!-- Input -->
+									
+									<div class="input">
+									
+										<p>Fax</p>
+										<?php if(isset($customfooter[$language_id]['contact_phone2'])) { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_phone2]" value="<?php echo $customfooter[$language_id]['contact2_phone2']; ?>" />
+										<?php } else { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_phone2]" value="" />
+										<?php } ?>
+									
+										<div class="clear"></div>
+									
+									</div>
+									
+									<!-- End Input -->
+									<!-- Input -->
+									
+									<div class="input">
+									
+										<p>Skype</p>
+										<?php if(isset($customfooter[$language_id]['contact2_skype'])) { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_skype]" value="<?php echo $customfooter[$language_id]['contact2_skype']; ?>" />
+										<?php } else { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_skype]" value="" />
+										<?php } ?>
+									
+										<div class="clear"></div>
+									
+									</div>
+									
+									<!-- End Input -->
+									<!-- Input -->
+									
+									<div class="input">
+									
+										<p>Skype 2</p>
+										<?php if(isset($customfooter[$language_id]['contact2_skype2'])) { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_skype2]" value="<?php echo $customfooter[$language_id]['contact2_skype2']; ?>" />
+										<?php } else { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_skype2]" value="" />
+										<?php } ?>
+									
+										<div class="clear"></div>
+									
+									</div>
+									
+									<!-- End Input -->
+									<!-- Input -->
+									
+									<div class="input">
+									
+										<p>E-mail</p>
+										<?php if(isset($customfooter[$language_id]['contact_email'])) { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_email]" value="<?php echo $customfooter[$language_id]['contact2_email']; ?>" />
+										<?php } else { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_email]" value="" />
+										<?php } ?>
+									
+										<div class="clear"></div>
+									
+									</div>
+									
+									<!-- End Input -->
+									<!-- Input -->
+									
+									<div class="input">
+									
+										<p>E-mail 2</p>
+										<?php if(isset($customfooter[$language_id]['contact_email2'])) { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_email2]" value="<?php echo $customfooter[$language_id]['contact2_email2']; ?>" />
+										<?php } else { ?>
+										<input name="customfooter[<?php echo $language_id; ?>][contact2_email2]" value="" />
+										<?php } ?>
+									
+										<div class="clear"></div>
+									
+									</div>
+									
+									<!-- End Input -->
+																	
+								</div>
+								
+								<!-- End TAB CONTACT -->
+								
+                                                                <!-- TAB About us -->
 								
 								<div id="tab_aboutus_<?php echo $language_id; ?>" class="tab-content4">
 								

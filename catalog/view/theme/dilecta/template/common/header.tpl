@@ -466,7 +466,7 @@ if($this->config->get('general_status') == '1') {
 				
 					<ul>
 					
-						<li><a href="<?php echo $home; ?>" class="home"></a></li>
+						<li><a href="<?php echo $home; ?>" class="">Home</a></li>
 						<?php if($custom_menu_status[$language_id] == '1' && $custom_menu_position[$language_id] == '1') { 
 							
 							for ($n = 1; $n <= 10; $n++) { 
