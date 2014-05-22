@@ -1,8 +1,8 @@
 <div class="box">
-  <div class="box-heading"><?php echo $heading_title; ?></div>
-  <div class="box-content">
-    <div class="box-category">
-      <ul>
+  <h3 class="box-heading"><?php echo $heading_title; ?></h3>
+  <div class="">
+    <div class="">
+        <ul class="Categories_list_here">
         <?php foreach ($categories as $category) { ?>
         <li>
           <?php if ($category['category_id'] == $category_id) { ?>
