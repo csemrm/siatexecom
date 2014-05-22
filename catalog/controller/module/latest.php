@@ -5,7 +5,11 @@ class ControllerModuleLatest extends Controller {
 		
 		$this->data['heading_title'] = $this->language->get('heading_title');
 		
-		$this->data['button_cart'] = $this->language->get('button_cart');
+		$this->data['button_cart'] = $this->language->get('button_cart');	
+		$this->data['button_wishlist'] = $this->language->get('button_wishlist');
+		$this->data['button_compare'] = $this->language->get('button_compare');
+
+		$this->data['compare'] = $this->url->link('product/compare');
 				
 		$this->load->model('catalog/product');
 		
