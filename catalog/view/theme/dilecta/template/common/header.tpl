@@ -422,12 +422,19 @@ if($this->config->get('general_status') == '1') {
 				<!-- Menu -->
 				
 				<ul class="menu">
-				
-					<li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
+				<?php if ($logged) { ?>
+                                <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
+                                <?php } ?>
+    
+					
 					<li><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a></li>
 					<li><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></li>
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Create an account</a></li>
+				<?php if (!$logged) { ?>
+    <?php echo $text_welcome; ?>
+    <?php } else { ?>
+    <?php echo $text_logged; ?>
+    <?php } ?>	<!--li><a href="#">Login</a></li>
+					<li><a href="#">Create an account</a></li-->
 				
 				</ul>
 			
