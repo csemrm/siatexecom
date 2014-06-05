@@ -297,8 +297,8 @@
                         <ul class="no-active">
 
                             <li><a href="<?php echo $manufacturer; ?>">&#8250; <?php echo $text_manufacturer; ?></a></li>
-                            <li><a href="<?php echo $voucher; ?>">&#8250; <?php echo $text_voucher; ?></a></li>
-                            <li><a href="<?php echo $affiliate; ?>">&#8250; <?php echo $text_affiliate; ?></a></li>
+                            <!--li><a href="<?php echo $voucher; ?>">&#8250; <?php echo $text_voucher; ?></a></li>
+                            <li><a href="<?php echo $affiliate; ?>">&#8250; <?php echo $text_affiliate; ?></a></li-->
                             <li><a href="<?php echo $special; ?>">&#8250; <?php echo $text_special; ?></a></li>
 
                         </ul>
