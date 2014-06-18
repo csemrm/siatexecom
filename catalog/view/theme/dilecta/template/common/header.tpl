@@ -122,34 +122,34 @@ if($this->config->get('general_status') == '1') {
 	<?php if($this->config->get('font_status') == '1' || $this->config->get('colors_status') == '1') { ?>
 	
 		<?php if( $this->config->get('categories_bar') != '' && $this->config->get('categories_bar') != 'standard'){	?>
-		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('categories_bar') ?>&v1' rel='stylesheet' type='text/css'>
+                <link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('categories_bar') ?>&amp;v1' rel='stylesheet' type='text/css'>
 		<?php } ?>
 		<?php if( $this->config->get('headlines') != '' && $this->config->get('headlines') != 'standard'){	?>
-		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('headlines') ?>&v1' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('headlines') ?>&amp;v1' rel='stylesheet' type='text/css'>
 		<?php } ?>
 		<?php if( $this->config->get('footer_headlines') != '' && $this->config->get('footer_headlines') != 'standard'){	?>
-		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('footer_headlines') ?>&v1' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('footer_headlines') ?>&amp;v1' rel='stylesheet' type='text/css'>
 		<?php } ?>
 		<?php if( $this->config->get('custom_price') != '' && $this->config->get('custom_price') != 'standard'){	?>
-		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('custom_price') ?>&v1' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('custom_price') ?>&amp;v1' rel='stylesheet' type='text/css'>
 		<?php } ?>
 		<?php if( $this->config->get('product_name_font') != '' && $this->config->get('product_name_font') != 'standard'){	?>
-		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('product_name_font') ?>&v1' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('product_name_font') ?>&amp;v1' rel='stylesheet' type='text/css'>
 		<?php } ?>
 		<?php if( $this->config->get('page_name') != '' && $this->config->get('page_name') != 'standard'){	?>
-		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('page_name') ?>&v1' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('page_name') ?>&amp;v1' rel='stylesheet' type='text/css'>
 		<?php } ?>
 		<?php if( $this->config->get('button_font') != '' && $this->config->get('button_font') != 'standard'){	?>
-		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('button_font') ?>&v1' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('button_font') ?>&amp;v1' rel='stylesheet' type='text/css'>
 		<?php } ?>
 		<?php if( $this->config->get('body_font') != '' && $this->config->get('custom_price') != 'body_font'){	?>
-		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('body_font') ?>&v1' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('body_font') ?>&amp;v1' rel='stylesheet' type='text/css'>
 		<?php } ?>
 		<?php if( $this->config->get('slider_large_description') != '' && $this->config->get('slider_large_description') != 'body_font'){	?>
-		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('slider_large_description') ?>&v1' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('slider_large_description') ?>&amp;v1' rel='stylesheet' type='text/css'>
 		<?php } ?>
 		<?php if( $this->config->get('slider_medium_description') != '' && $this->config->get('slider_medium_description') != 'body_font'){	?>
-		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('slider_medium_description') ?>&v1' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=<?php echo $this->config->get('slider_medium_description') ?>&amp;v1' rel='stylesheet' type='text/css'>
 		<?php } ?>
 		
 	<style type="text/css">
@@ -706,7 +706,7 @@ if($this->config->get('general_status') == '1') {
 								
 								}
 								
-								echo '<li data-transition="'.$slider[$i][$language_id]['transition_effect'].'" data-slotamount="10" data-masterspeed="300"'.$link.'><img src="image/'.$image.'" data-fullwidthcentering="on">'.$description.'</li>';
+								echo '<li data-transition="'.$slider[$i][$language_id]['transition_effect'].'" data-slotamount="10" data-masterspeed="300"'.$link.'><img src="image/'.$image.'" data-fullwidthcentering="on" alt ="'$description'">'.$description.'</li>';
 							
 							}
 						
