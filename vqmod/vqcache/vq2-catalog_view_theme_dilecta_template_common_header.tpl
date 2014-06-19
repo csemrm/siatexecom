@@ -374,6 +374,21 @@ if($this->config->get('general_status') == '1') {
 	<!--[if IE 7]>
 	<link rel="stylesheet" type="text/css" href="catalog/view/theme/dilecta/css/ie7.css" />
 	<![endif]-->
+
+			<link rel="stylesheet" href="catalog/view/javascript/jquery.cluetip.css" type="text/css" />
+			<script src="catalog/view/javascript/jquery.cluetip.js" type="text/javascript"></script>
+			
+			<script type="text/javascript">
+				$(document).ready(function() {
+				$('a.title').cluetip({splitTitle: '|'});
+				  $('ol.rounded a:eq(0)').cluetip({splitTitle: '|', dropShadow: false, cluetipClass: 'rounded', showtitle: false});
+				  $('ol.rounded a:eq(1)').cluetip({cluetipClass: 'rounded', dropShadow: false, showtitle: false, positionBy: 'mouse'});
+				  $('ol.rounded a:eq(2)').cluetip({cluetipClass: 'rounded', dropShadow: false, showtitle: false, positionBy: 'bottomTop', topOffset: 70});
+				  $('ol.rounded a:eq(3)').cluetip({cluetipClass: 'rounded', dropShadow: false, sticky: true, ajaxCache: false, arrows: true});
+				  $('ol.rounded a:eq(4)').cluetip({cluetipClass: 'rounded', dropShadow: false});  
+				});
+			</script>
+			
 </head>
 <body>
 
