@@ -47,7 +47,7 @@
 
             <div class="left">
                 <?php if ($thumb) { ?>
-                <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="jqzoom" rel='gal1'><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" /></a></div>
+                <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="jqzoom" rel='gal1'><img alt="<?php echo $heading_title; ?>" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" /></a></div>
 
                 <div class="zoom-image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox" rel="colorbox">zoom</a></div>
                 <?php foreach ($images as $image) { ?>
@@ -332,7 +332,7 @@
 
                     <div>
 
-                        <img src="catalog/view/theme/dilecta/img/stars-<?php echo $rating; ?>.png" alt="" />
+                        <img src="catalog/view/theme/siatex/img/stars-<?php echo $rating; ?>.png" alt="" />
                         <a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $reviews; ?></a><a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $text_write; ?></a>
 
                     </div>

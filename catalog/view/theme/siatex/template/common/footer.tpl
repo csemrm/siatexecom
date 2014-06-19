@@ -234,7 +234,7 @@
                     <?php if($customfooter[$language_id]['facebook_title'] != '') { ?>
                     <h3 class="facebook"><?php echo $customfooter[$language_id]['facebook_title']; ?></h3>
                     <?php } ?>
-                    <?php $facebook_css = ''.HTTP_SERVER.'catalog/view/theme/dilecta/css/facebook.css';?>
+                    <?php $facebook_css = ''.HTTP_SERVER.'catalog/view/theme/siatex/css/facebook.css';?>
 
                     <div id="facebook" style="margin-top:0px">
 
@@ -331,30 +331,30 @@
 
                     <?php if($this->config->get('payment_mastercard_status') != '0') { ?>
                     <?php if($this->config->get('payment_mastercard') != '') { ?>
-                    <li><a href="<?php echo $this->config->get('payment_mastercard'); ?>"><img src="catalog/view/theme/dilecta/img/mastercard.png" alt="Mastercard" /></a></li>
+                    <li><a href="<?php echo $this->config->get('payment_mastercard'); ?>"><img src="catalog/view/theme/siatex/img/mastercard.png" alt="Mastercard" /></a></li>
                     <?php } else { ?>
-                    <li><img src="catalog/view/theme/dilecta/img/mastercard.png" alt="Mastercard" /></li>
+                    <li><img src="catalog/view/theme/siatex/img/mastercard.png" alt="Mastercard" /></li>
                     <?php } ?>
                     <?php } ?>
                     <?php if($this->config->get('payment_visa_status') != '0') { ?>
                     <?php if($this->config->get('payment_visa') != '') { ?>
-                    <li><a href="<?php echo $this->config->get('payment_visa'); ?>"><img src="catalog/view/theme/dilecta/img/visa.png" alt="Visa" /></a></li>
+                    <li><a href="<?php echo $this->config->get('payment_visa'); ?>"><img src="catalog/view/theme/siatex/img/visa.png" alt="Visa" /></a></li>
                     <?php } else { ?>
-                    <li><img src="catalog/view/theme/dilecta/img/visa.png" alt="Visa" /></li>
+                    <li><img src="catalog/view/theme/siatex/img/visa.png" alt="Visa" /></li>
                     <?php } ?>
                     <?php } ?>
                     <?php if($this->config->get('payment_moneybookers_status') != '0') { ?>
                     <?php if($this->config->get('payment_moneybookers') != '') { ?>
-                    <li><a href="<?php echo $this->config->get('payment_moneybookers'); ?>"><img src="catalog/view/theme/dilecta/img/moneybookers.png" alt="MoneyBookers" /></a></li>
+                    <li><a href="<?php echo $this->config->get('payment_moneybookers'); ?>"><img src="catalog/view/theme/siatex/img/moneybookers.png" alt="MoneyBookers" /></a></li>
                     <?php } else { ?>
-                    <li><img src="catalog/view/theme/dilecta/img/moneybookers.png" alt="MoneyBookers" /></li>
+                    <li><img src="catalog/view/theme/siatex/img/moneybookers.png" alt="MoneyBookers" /></li>
                     <?php } ?>
                     <?php } ?>
                     <?php if($this->config->get('payment_paypal_status') != '0') { ?>
                     <?php if($this->config->get('payment_paypal') != '') { ?>
-                    <li><a href="<?php echo $this->config->get('payment_paypal'); ?>"><img src="catalog/view/theme/dilecta/img/paypal.png" alt="PayPal" /></a></li>
+                    <li><a href="<?php echo $this->config->get('payment_paypal'); ?>"><img src="catalog/view/theme/siatex/img/paypal.png" alt="PayPal" /></a></li>
                     <?php } else { ?>
-                    <li><img src="catalog/view/theme/dilecta/img/paypal.png" alt="PayPal" /></li>
+                    <li><img src="catalog/view/theme/siatex/img/paypal.png" alt="PayPal" /></li>
                     <?php } ?>
                     <?php } ?>
                     <?php if($this->config->get('payment_add_0_status') != '0' && $this->config->get('payment_add_0') != '') { ?>

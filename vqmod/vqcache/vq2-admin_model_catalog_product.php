@@ -163,12 +163,12 @@ class ModelCatalogProduct extends Model {
 							
 							$tags = array();
 							
-							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
-							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
-							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
-							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
-							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
-							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
+							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
+							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
+							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
+							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
+							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
+							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
 							
 							$keywords = '';
 							
@@ -215,18 +215,18 @@ class ModelCatalogProduct extends Model {
 							$bef = array("%", "_","\"","'","\\", "\r", "\n");
 							$aft = array("", " ", " ", " ", "", "", "");
 							
-							$ncategory = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))));
-							$nproduct = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))));
-							$model = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))));
-							$sku = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))));
-							$upc = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))));
+							$ncategory = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))));
+							$nproduct = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))));
+							$model = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))));
+							$sku = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))));
+							$upc = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))));
 							$content = strip_tags(html_entity_decode($product['pdescription']));
 							$pos = strpos($content, '.');							   
 							if($pos === false) {}
 								else { $content =  substr($content, 0, $pos+1);	}
-							$sentence = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft, $content))));
-							$brand = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))));
-							$price = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft, number_format($product['price'], 2)))));
+							$sentence = trim((htmlspecialchars_decode(str_replace($bef, $aft, $content))));
+							$brand = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))));
+							$price = trim((htmlspecialchars_decode(str_replace($bef, $aft, number_format($product['price'], 2)))));
 							
 							$bef = array("%c", "%p", "%m", "%s", "%u", "%f", "%b", "%$");
 							$aft = array($ncategory, $nproduct, $model, $sku, $upc, $sentence, $brand, $price);
@@ -265,12 +265,12 @@ class ModelCatalogProduct extends Model {
 						$bef = array("%", "_","\"","'","\\");
 						$aft = array("", " ", " ", " ", "");
 						
-							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
-							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
-							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
-							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
-							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
-							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
+							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
+							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
+							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
+							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
+							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
+							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
 							
 							foreach ($tags as $tag)
 								{
@@ -285,7 +285,7 @@ class ModelCatalogProduct extends Model {
 							
 														
 							if ($product['tag']) {
-								$newtags = trim(mysql_real_escape_string($product['tag']) . $newtags,' ,');
+								$newtags = trim(($product['tag']) . $newtags,' ,');
 								$this->db->query("update " . DB_PREFIX . "product_description set tag = '$newtags' where product_id = '". $product['product_id'] ."' and language_id = '". $product['language_id'] ."';");
 								}
 								else {
@@ -527,12 +527,12 @@ class ModelCatalogProduct extends Model {
 							
 							$tags = array();
 							
-							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
-							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
-							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
-							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
-							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
-							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
+							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
+							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
+							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
+							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
+							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
+							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
 							
 							$keywords = '';
 							
@@ -579,18 +579,18 @@ class ModelCatalogProduct extends Model {
 							$bef = array("%", "_","\"","'","\\", "\r", "\n");
 							$aft = array("", " ", " ", " ", "", "", "");
 							
-							$ncategory = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))));
-							$nproduct = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))));
-							$model = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))));
-							$sku = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))));
-							$upc = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))));
+							$ncategory = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))));
+							$nproduct = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))));
+							$model = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))));
+							$sku = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))));
+							$upc = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))));
 							$content = strip_tags(html_entity_decode($product['pdescription']));
 							$pos = strpos($content, '.');							   
 							if($pos === false) {}
 								else { $content =  substr($content, 0, $pos+1);	}
-							$sentence = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft, $content))));
-							$brand = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))));
-							$price = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft, number_format($product['price'], 2)))));
+							$sentence = trim((htmlspecialchars_decode(str_replace($bef, $aft, $content))));
+							$brand = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))));
+							$price = trim((htmlspecialchars_decode(str_replace($bef, $aft, number_format($product['price'], 2)))));
 							
 							$bef = array("%c", "%p", "%m", "%s", "%u", "%f", "%b", "%$");
 							$aft = array($ncategory, $nproduct, $model, $sku, $upc, $sentence, $brand, $price);
@@ -629,12 +629,12 @@ class ModelCatalogProduct extends Model {
 						$bef = array("%", "_","\"","'","\\");
 						$aft = array("", " ", " ", " ", "");
 						
-							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
-							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
-							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
-							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
-							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
-							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
+							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
+							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
+							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
+							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
+							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
+							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
 							
 							foreach ($tags as $tag)
 								{
@@ -649,7 +649,7 @@ class ModelCatalogProduct extends Model {
 							
 														
 							if ($product['tag']) {
-								$newtags = trim(mysql_real_escape_string($product['tag']) . $newtags,' ,');
+								$newtags = trim(($product['tag']) . $newtags,' ,');
 								$this->db->query("update " . DB_PREFIX . "product_description set tag = '$newtags' where product_id = '". $product['product_id'] ."' and language_id = '". $product['language_id'] ."';");
 								}
 								else {
@@ -803,12 +803,12 @@ class ModelCatalogProduct extends Model {
 							
 							$tags = array();
 							
-							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
-							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
-							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
-							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
-							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
-							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
+							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
+							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
+							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
+							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
+							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
+							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
 							
 							$keywords = '';
 							
@@ -855,18 +855,18 @@ class ModelCatalogProduct extends Model {
 							$bef = array("%", "_","\"","'","\\", "\r", "\n");
 							$aft = array("", " ", " ", " ", "", "", "");
 							
-							$ncategory = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))));
-							$nproduct = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))));
-							$model = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))));
-							$sku = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))));
-							$upc = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))));
+							$ncategory = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))));
+							$nproduct = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))));
+							$model = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))));
+							$sku = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))));
+							$upc = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))));
 							$content = strip_tags(html_entity_decode($product['pdescription']));
 							$pos = strpos($content, '.');							   
 							if($pos === false) {}
 								else { $content =  substr($content, 0, $pos+1);	}
-							$sentence = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft, $content))));
-							$brand = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))));
-							$price = trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft, number_format($product['price'], 2)))));
+							$sentence = trim((htmlspecialchars_decode(str_replace($bef, $aft, $content))));
+							$brand = trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))));
+							$price = trim((htmlspecialchars_decode(str_replace($bef, $aft, number_format($product['price'], 2)))));
 							
 							$bef = array("%c", "%p", "%m", "%s", "%u", "%f", "%b", "%$");
 							$aft = array($ncategory, $nproduct, $model, $sku, $upc, $sentence, $brand, $price);
@@ -905,12 +905,12 @@ class ModelCatalogProduct extends Model {
 						$bef = array("%", "_","\"","'","\\");
 						$aft = array("", " ", " ", " ", "");
 						
-							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
-							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
-							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
-							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
-							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
-							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
+							if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
+							if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
+							if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
+							if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
+							if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
+							if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
 							
 							foreach ($tags as $tag)
 								{
@@ -925,7 +925,7 @@ class ModelCatalogProduct extends Model {
 							
 														
 							if ($product['tag']) {
-								$newtags = trim(mysql_real_escape_string($product['tag']) . $newtags,' ,');
+								$newtags = trim(($product['tag']) . $newtags,' ,');
 								$this->db->query("update " . DB_PREFIX . "product_description set tag = '$newtags' where product_id = '". $product['product_id'] ."' and language_id = '". $product['language_id'] ."';");
 								}
 								else {

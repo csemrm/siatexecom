@@ -1,79 +1,83 @@
 <modification>
 
-	<id>Custom alts</id>
-	<version>1.0.0</version>
-	<vqmver>2.1.5</vqmver>
-	<author>ovife21</author>
+    <id>Custom alts</id>
+    <version>1.0.0</version>
+    <vqmver>2.1.5</vqmver>
+    <author>ovife21</author>
 	
-	<file name="admin/language/*/catalog/product.php">
-		<operation>
-			<search position="before"><![CDATA[$_['entry_name']]]></search>
-			<add><![CDATA[$_['entry_custom_alt']            = 'Custom alt<br/><span class="help">Leave empty if you want the default alt to be displayed</span>';]]></add>
-		</operation>			
-	</file>		
+    <file name="admin/language/*/catalog/product.php">
+        <operation>
+            <search position="before"><![CDATA[$_['entry_name']]]></search>
+            <add><![CDATA[$_['entry_custom_alt']            = 'Custom alt<br/><span class="help">Leave empty if you want the default alt to be displayed</span>';]]></add>
+        </operation>			
+    </file>		
 	 
 	 
-	<file name="admin/view/template/catalog/product_form.tpl">
-		<operation>
-			<search position="before"><![CDATA[<td><?php echo $entry_meta_description; ?></td>]]></search>
-			<add><![CDATA[<td><?php echo $entry_custom_alt; ?></td>
+    <file name="admin/view/template/catalog/product_form.tpl">
+        <operation>
+            <search position="before"><![CDATA[<td><?php echo $entry_meta_description; ?></td>]]></search>
+            <add><![CDATA[<td><?php echo $entry_custom_alt; ?></td>
 			<td><input type="text" name="product_description[<?php echo $language['language_id']; ?>][custom_alt]" size="100" value="<?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['custom_alt'] : ''; ?>" /></td>
               </tr>
               <tr>]]></add>
-		</operation>			
-	</file>	
+        </operation>			
+    </file>	
 	 
 	 
-	<file name="admin/model/catalog/product.php">
-		<operation>
-			<search position="replace"><![CDATA['meta_description' => $result['meta_description']]]></search>
-			<add><![CDATA['custom_alt' => $result['custom_alt'], 'meta_description' => $result['meta_description']]]></add>
-		</operation>
-		<operation>
-			<search position="replace"><![CDATA[meta_description = '" . $this->db->escape($value['meta_description']) . "',]]></search>
-			<add><![CDATA[custom_alt = '" . ((isset($value['custom_alt']))?($this->db->escape($value['custom_alt'])):'') . "', meta_description = '" . $this->db->escape($value['meta_description']) . "',]]></add>
-		</operation>			
-	</file>
-	<file name="catalog/model/catalog/product.php">
-		<operation error="skip">
-			<search position="replace"><![CDATA[$query->row['meta_keyword'],]]></search>
-			<add><![CDATA[$query->row['meta_keyword'], 'custom_alt' => $query->row['custom_alt'],]]></add>
-		</operation>							
-	</file>	
+    <file name="admin/model/catalog/product.php">
+        <operation>
+            <search position="replace"><![CDATA['meta_description' => $result['meta_description']]]></search>
+            <add><![CDATA['custom_alt' => $result['custom_alt'], 'meta_description' => $result['meta_description']]]></add>
+        </operation>
+        <operation>
+            <search position="replace"><![CDATA[meta_description = '" . $this->db->escape($value['meta_description']) . "',]]></search>
+            <add><![CDATA[custom_alt = '" . ((isset($value['custom_alt']))?($this->db->escape($value['custom_alt'])):'') . "', meta_description = '" . $this->db->escape($value['meta_description']) . "',]]></add>
+        </operation>			
+    </file>
+    <file name="catalog/model/catalog/product.php">
+        <operation error="skip">
+            <search position="replace"><![CDATA[$query->row['meta_keyword'],]]></search>
+            <add><![CDATA[$query->row['meta_keyword'], 'custom_alt' => $query->row['custom_alt'],]]></add>
+        </operation>							
+    </file>	
 	 
 	 
-	<file name="admin/controller/catalog/product.php">
-		<operation>
-			<search position="before"><![CDATA[$this->data['entry_meta_description'] = $this->language->get('entry_meta_description');]]></search>
-			<add><![CDATA[$this->data['entry_custom_alt'] = $this->language->get('entry_custom_alt');]]></add>
-		</operation>		
-		<operation>
-			<search position="before"><![CDATA[if (isset($this->error['meta_description'])) {]]></search>
-			<add><![CDATA[if (isset($this->error['custom_alt'])) {
+    <file name="admin/controller/catalog/product.php">
+        <operation>
+            <search position="before"><![CDATA[$this->data['entry_meta_description'] = $this->language->get('entry_meta_description');]]></search>
+            <add><![CDATA[$this->data['entry_custom_alt'] = $this->language->get('entry_custom_alt');]]></add>
+        </operation>		
+        <operation>
+            <search position="before"><![CDATA[if (isset($this->error['meta_description'])) {]]></search>
+            <add><![CDATA[if (isset($this->error['custom_alt'])) {
 					$this->data['error_custom_alt'] = $this->error['custom_alt'];
 				} else {
 					$this->data['error_custom_alt'] = array();
 				}	]]></add>
-		</operation>			
-	</file>	
-	 
-	 
-	<file name="catalog/controller/product/product.php">
-		<operation>
-			<search position="replace"><![CDATA[$this->document->setTitle($product_info['name']);]]></search>
-			<add><![CDATA[($product_info['custom_alt'] == '')?$this->document->setTitle($product_info['name']):$this->document->setTitle($product_info['custom_alt']);]]></add>
-		</operation>		
-	</file>	
-	 
-	 
-	<file name="admin/view/template/catalog/seopack.tpl">
-		<operation>
-			<search position="before"><![CDATA[<p><a onclick="clearseo('Products Tags', '<?php echo $cleartags; ?>');" class="button" style="background:red">Clear Tags</a></p>]]></search>
-			<add><![CDATA[<p><a onclick="clearseo('Product Custom altss', '<?php echo $clearalts; ?>');" class="button" style="background:red">Clear Custom alts</a></p>]]></add>
-		</operation>
-		<operation>
-			<search position="before"><![CDATA[<td class="left"><b>Tags Generator</b></td>]]></search>
-			<add><![CDATA[<td class="left"><b>Product Custom Alts Generator</b></td>
+        </operation>			
+    </file>	
+ 
+	 <file name="catalog/view/theme/*/template/product/product.tpl">
+        <operation>
+            <search position="replace"><![CDATA[alt="<?php echo $heading_title; ?>"]]></search>
+            <add><![CDATA[alt="<?php echo $custom_alt ?>"]]></add>
+        </operation>		
+    </file>	
+    <file name="catalog/controller/product/product.php">
+        <operation>
+            <search position="before"><![CDATA[$this->data['heading_title'] = $product_info['name'];]]></search>
+            <add><![CDATA[$this->data['custom_alt'] = ($product_info['custom_alt'] == '')? $product_info['name']: $product_info['custom_alt'];]]></add>
+        </operation>		
+    </file>
+    
+    <file name="admin/view/template/catalog/seopack.tpl">
+        <operation>
+            <search position="before"><![CDATA[<p><a onclick="clearseo('Products Tags', '<?php echo $cleartags; ?>');" class="button" style="background:red">Clear Tags</a></p>]]></search>
+            <add><![CDATA[<p><a onclick="clearseo('Product Custom altss', '<?php echo $clearalts; ?>');" class="button" style="background:red">Clear Custom alts</a></p>]]></add>
+        </operation>
+        <operation>
+            <search position="before"><![CDATA[<td class="left"><b>Tags Generator</b></td>]]></search>
+            <add><![CDATA[<td class="left"><b>Product Custom Alts Generator</b></td>
                 <td class="left"><span class="help">Product Custom Alts Generator generates custom alts for products from relevant keywords from product(%p) and category(%c) names.<br><br>
 				<b>Parameters</b><br>
 				There are available the following parameters and they will be replaced by their actual value: <b>%p</b> - product's name, <b>%c</b> - category's name, <b>%m</b> - model, <b>%s</b> - product's sku, <b>%u</b> - product's upc, <b>%b</b> - product's brand and <b>%$</b> - product's price.<br>
@@ -93,12 +97,12 @@
 			
 			<tbody>
               <tr>]]></add>
-		</operation>		
-	</file>	
-	<file name="admin/controller/catalog/seopack.php">
-		<operation>
-			<search position="before"><![CDATA[public function cleartags() {]]></search>
-			<add><![CDATA[public function clearalts() {
+        </operation>		
+    </file>	
+    <file name="admin/controller/catalog/seopack.php">
+        <operation>
+            <search position="before"><![CDATA[public function cleartags() {]]></search>
+            <add><![CDATA[public function clearalts() {
 	
 		$query = $this->db->query("update " . DB_PREFIX . "product_description set custom_alt = '';");
 		
@@ -107,40 +111,40 @@
 		$this->redirect($this->url->link('catalog/seopack', 'token=' . $this->session->data['token'], 'SSL'));
 	
 			}]]></add>
-		</operation>	
-		<operation>
-			<search position="before"><![CDATA[$this->data['cleartags']]]></search>
-			<add><![CDATA[$this->data['clearalts'] = $this->url->link('catalog/seopack/clearalts', 'token=' . $this->session->data['token'], 'SSL');]]></add>
-		</operation>		
-	</file>	
-	<file name="admin/controller/catalog/seoedit.php">
-		<operation>
-			<search position="before"><![CDATA[$meta_keyword = $this->db->escape($_POST['meta_keyword']);]]></search>
-			<add><![CDATA[$custom_alt = $this->db->escape($_POST['custom_alt']);]]></add>
-		</operation>		
-		<operation>
-			<search position="before"><![CDATA[$query = $this->db->query("update " . DB_PREFIX . "product_description set meta_keyword = '$meta_keyword' where product_id = $id and language_id = $language_id;");]]></search>
-			<add><![CDATA[$query = $this->db->query("update " . DB_PREFIX . "product_description set custom_alt = '$custom_alt' where product_id = $id and language_id = $language_id;");]]></add>
-		</operation>		
-	</file>
-	<file name="admin/view/template/catalog/seoeditor.tpl">
-		<operation>
-			<search position="before"><![CDATA[<td class="left"  style="width:220px;"><?php if ($sort == 'meta_keyword') { ?>]]></search>
-			<add><![CDATA[
+        </operation>	
+        <operation>
+            <search position="before"><![CDATA[$this->data['cleartags']]]></search>
+            <add><![CDATA[$this->data['clearalts'] = $this->url->link('catalog/seopack/clearalts', 'token=' . $this->session->data['token'], 'SSL');]]></add>
+        </operation>		
+    </file>	
+    <file name="admin/controller/catalog/seoedit.php">
+        <operation>
+            <search position="before"><![CDATA[$meta_keyword = $this->db->escape($_POST['meta_keyword']);]]></search>
+            <add><![CDATA[$custom_alt = $this->db->escape($_POST['custom_alt']);]]></add>
+        </operation>		
+        <operation>
+            <search position="before"><![CDATA[$query = $this->db->query("update " . DB_PREFIX . "product_description set meta_keyword = '$meta_keyword' where product_id = $id and language_id = $language_id;");]]></search>
+            <add><![CDATA[$query = $this->db->query("update " . DB_PREFIX . "product_description set custom_alt = '$custom_alt' where product_id = $id and language_id = $language_id;");]]></add>
+        </operation>		
+    </file>
+    <file name="admin/view/template/catalog/seoeditor.tpl">
+        <operation>
+            <search position="before"><![CDATA[<td class="left"  style="width:220px;"><?php if ($sort == 'meta_keyword') { ?>]]></search>
+            <add><![CDATA[
 			<td class="left"  style="width:220px;"><?php if ($sort == 'custom_alt') { ?>
                 <a href="<?php echo $sort_custom_alt; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_custom_alt; ?></a>
                 <?php } else { ?>
                 <a href="<?php echo $sort_custom_alt; ?>"><?php echo $column_custom_alt; ?></a>
                 <?php } ?></td>
 			]]></add>
-		</operation>		
-		<operation>
-			<search position="before"><![CDATA[<td><input type="text" name="filter_meta_keyword" value="<?php echo $filter_meta_keyword; ?>" /></td>]]></search>
-			<add><![CDATA[<td><input type="text" name="filter_custom_alt" value="<?php echo $filter_custom_alt; ?>" /></td>]]></add>
-		</operation>		
-		<operation>
-			<search position="before"><![CDATA[<?php if ($product['meta_keyword'] <> -1) { ?>]]></search>
-			<add><![CDATA[
+        </operation>		
+        <operation>
+            <search position="before"><![CDATA[<td><input type="text" name="filter_meta_keyword" value="<?php echo $filter_meta_keyword; ?>" /></td>]]></search>
+            <add><![CDATA[<td><input type="text" name="filter_custom_alt" value="<?php echo $filter_custom_alt; ?>" /></td>]]></add>
+        </operation>		
+        <operation>
+            <search position="before"><![CDATA[<?php if ($product['meta_keyword'] <> -1) { ?>]]></search>
+            <add><![CDATA[
 			<?php if ($product['custom_alt'] <> -1) { ?>
 				   <td class="edit_td">
 					<span id="custom_alt_<?php echo $product['type'].$product['id']; ?>" class="text"><?php echo $product['custom_alt']; ?></span>
@@ -150,23 +154,23 @@
 					<td class="left" style="background:lightgrey"></td>
 			  <?php } ?>
 			  ]]></add>
-		</operation>		
-		<operation>
-			<search position="replace"><![CDATA[textarea class="editbox"]]></search>
-			<add><![CDATA[textarea style="width:180px;" class="editbox"]]></add>
-		</operation>		
-		<operation>
-			<search position="before"><![CDATA[var filter_meta_keyword = $('input[name=\'filter_meta_keyword\']').attr('value');]]></search>
-			<add><![CDATA[
+        </operation>		
+        <operation>
+            <search position="replace"><![CDATA[textarea class="editbox"]]></search>
+            <add><![CDATA[textarea style="width:180px;" class="editbox"]]></add>
+        </operation>		
+        <operation>
+            <search position="before"><![CDATA[var filter_meta_keyword = $('input[name=\'filter_meta_keyword\']').attr('value');]]></search>
+            <add><![CDATA[
 			var filter_custom_alt = $('input[name=\'filter_custom_alt\']').attr('value');
 	
 			if (filter_custom_alt) {
 				url += '&filter_custom_alt=' + encodeURIComponent(filter_custom_alt);
 			}]]></add>
-		</operation>		
-		<operation>
-			<search position="before"><![CDATA[$('input[name=\'filter_meta_keyword\']').autocomplete({]]></search>
-			<add><![CDATA[
+        </operation>		
+        <operation>
+            <search position="before"><![CDATA[$('input[name=\'filter_meta_keyword\']').autocomplete({]]></search>
+            <add><![CDATA[
 			$('input[name=\'filter_custom_alt\']').autocomplete({
 				delay: 0,
 				source: function(request, response) {
@@ -190,95 +194,95 @@
 				}
 			});
 			]]></add>
-		</operation>		
-	</file>
-	<file name="admin/model/catalog/seoeditor.php">
-		<operation>
-			<search position="before" index="1,5"><![CDATA[if (!empty($data['filter_meta_keyword'])) {]]></search>
-			<add><![CDATA[if (!empty($data['filter_custom_alt'])) {
+        </operation>		
+    </file>
+    <file name="admin/model/catalog/seoeditor.php">
+        <operation>
+            <search position="before" index="1,5"><![CDATA[if (!empty($data['filter_meta_keyword'])) {]]></search>
+            <add><![CDATA[if (!empty($data['filter_custom_alt'])) {
 				$sql .= " AND LCASE(pd.custom_alt) LIKE '%" . $this->db->escape(utf8_strtolower($data['filter_custom_alt'])) . "%'";
 			}]]></add>
-		</operation>		
-		<operation>
-			<search position="replace"><![CDATA[pd.meta_keyword,]]></search>
-			<add><![CDATA[pd.meta_keyword, pd.custom_alt,]]></add>
-		</operation>	
-		<operation>
-			<search position="replace"><![CDATA['meta_keyword',]]></search>
-			<add><![CDATA['meta_keyword', 'custom_alt', ]]></add>
-		</operation>	
-		<operation>
-			<search position="replace"><![CDATA[cd.meta_keyword,]]></search>
-			<add><![CDATA[cd.meta_keyword, -1,]]></add>
-		</operation>	
-		<operation>
-			<search position="replace"><![CDATA[-1, -1, -1]]></search>
-			<add><![CDATA[-1, -1, -1, -1]]></add>
-		</operation>		
-		<operation>
-			<search position="after"><![CDATA[$sql .= " AND 1=2";]]></search>
-			<add><![CDATA[
+        </operation>		
+        <operation>
+            <search position="replace"><![CDATA[pd.meta_keyword,]]></search>
+            <add><![CDATA[pd.meta_keyword, pd.custom_alt,]]></add>
+        </operation>	
+        <operation>
+            <search position="replace"><![CDATA['meta_keyword',]]></search>
+            <add><![CDATA['meta_keyword', 'custom_alt', ]]></add>
+        </operation>	
+        <operation>
+            <search position="replace"><![CDATA[cd.meta_keyword,]]></search>
+            <add><![CDATA[cd.meta_keyword, -1,]]></add>
+        </operation>	
+        <operation>
+            <search position="replace"><![CDATA[-1, -1, -1]]></search>
+            <add><![CDATA[-1, -1, -1, -1]]></add>
+        </operation>		
+        <operation>
+            <search position="after"><![CDATA[$sql .= " AND 1=2";]]></search>
+            <add><![CDATA[
 			}
 			if (!empty($data['filter_custom_alt'])) {
 				$sql .= " AND 1=2";]]></add>
-		</operation>		
-	</file>	
-	<file name="admin/controller/catalog/seoeditor.php">
-		<operation>
-			<search position="before" index="1,4"><![CDATA[if (isset($this->request->get['filter_meta_keyword'])) {]]></search>
-			<add><![CDATA[
+        </operation>		
+    </file>	
+    <file name="admin/controller/catalog/seoeditor.php">
+        <operation>
+            <search position="before" index="1,4"><![CDATA[if (isset($this->request->get['filter_meta_keyword'])) {]]></search>
+            <add><![CDATA[
 			if (isset($this->request->get['filter_custom_alt'])) {
 				$filter_custom_alt = $this->request->get['filter_custom_alt'];
 			} else {
 				$filter_custom_alt = null;
 			}]]></add>
-		</operation>		
-		<operation>
-			<search position="before" index="2,3"><![CDATA[if (isset($this->request->get['filter_meta_keyword'])) {]]></search>
-			<add><![CDATA[
+        </operation>		
+        <operation>
+            <search position="before" index="2,3"><![CDATA[if (isset($this->request->get['filter_meta_keyword'])) {]]></search>
+            <add><![CDATA[
 			if (isset($this->request->get['filter_custom_alt'])) {
 				$url .= '&filter_custom_alt=' . $this->request->get['filter_custom_alt'];
 			}		]]></add>
-		</operation>
-		<operation>
-			<search position="before"><![CDATA['filter_meta_keyword' => $filter_meta_keyword,]]></search>
-			<add><![CDATA[
+        </operation>
+        <operation>
+            <search position="before"><![CDATA['filter_meta_keyword' => $filter_meta_keyword,]]></search>
+            <add><![CDATA[
 			'filter_custom_alt' => $filter_custom_alt,		]]></add>
-		</operation>
-		<operation>
-			<search position="before"><![CDATA['meta_keyword'      => $result['meta_keyword'],]]></search>
-			<add><![CDATA[
+        </operation>
+        <operation>
+            <search position="before"><![CDATA['meta_keyword'      => $result['meta_keyword'],]]></search>
+            <add><![CDATA[
 			'custom_alt'      => $result['custom_alt'],]]></add>
-		</operation>
-		<operation>
-			<search position="before"><![CDATA[$this->data['column_meta_keyword'] = $this->language->get('column_meta_keyword');]]></search>
-			<add><![CDATA[
+        </operation>
+        <operation>
+            <search position="before"><![CDATA[$this->data['column_meta_keyword'] = $this->language->get('column_meta_keyword');]]></search>
+            <add><![CDATA[
 			$this->data['column_custom_alt'] = 'Custom Title';]]></add>
-		</operation>
-		<operation>
-			<search position="before"><![CDATA[$this->data['sort_meta_keyword'] = $this->url->link('catalog/seoeditor', 'token=' . $this->session->data['token'] . '&sort=meta_keyword' . $url, 'SSL');]]></search>
-			<add><![CDATA[
+        </operation>
+        <operation>
+            <search position="before"><![CDATA[$this->data['sort_meta_keyword'] = $this->url->link('catalog/seoeditor', 'token=' . $this->session->data['token'] . '&sort=meta_keyword' . $url, 'SSL');]]></search>
+            <add><![CDATA[
 			$this->data['sort_custom_alt'] = $this->url->link('catalog/seoeditor', 'token=' . $this->session->data['token'] . '&sort=custom_alt' . $url, 'SSL');]]></add>
-		</operation>
-		<operation>
-			<search position="before"><![CDATA[$this->data['filter_meta_keyword'] = $filter_meta_keyword;]]></search>
-			<add><![CDATA[
+        </operation>
+        <operation>
+            <search position="before"><![CDATA[$this->data['filter_meta_keyword'] = $filter_meta_keyword;]]></search>
+            <add><![CDATA[
 			$this->data['filter_custom_alt'] = $filter_custom_alt;]]></add>
-		</operation>
-		<operation>
-			<search position="replace"><![CDATA[|| isset($this->request->get['filter_meta_keyword']) ]]></search>
-			<add><![CDATA[|| isset($this->request->get['filter_meta_keyword']) || isset($this->request->get['filter_custom_alt']) ]]></add>
-		</operation>
-		<operation>
-			<search position="before"><![CDATA['filter_meta_keyword'      => $filter_meta_keyword,]]></search>
-			<add><![CDATA['filter_custom_alt'      => $filter_custom_alt,]]></add>
-		</operation>
-		<operation>
-			<search position="before"><![CDATA['meta_keyword'      => html_entity_decode($result['meta_keyword'], ENT_QUOTES, 'UTF-8'),]]></search>
-			<add><![CDATA['custom_alt'      => html_entity_decode($result['custom_alt'], ENT_QUOTES, 'UTF-8'),]]></add>
-		</operation>
+        </operation>
+        <operation>
+            <search position="replace"><![CDATA[|| isset($this->request->get['filter_meta_keyword']) ]]></search>
+            <add><![CDATA[|| isset($this->request->get['filter_meta_keyword']) || isset($this->request->get['filter_custom_alt']) ]]></add>
+        </operation>
+        <operation>
+            <search position="before"><![CDATA['filter_meta_keyword'      => $filter_meta_keyword,]]></search>
+            <add><![CDATA['filter_custom_alt'      => $filter_custom_alt,]]></add>
+        </operation>
+        <operation>
+            <search position="before"><![CDATA['meta_keyword'      => html_entity_decode($result['meta_keyword'], ENT_QUOTES, 'UTF-8'),]]></search>
+            <add><![CDATA['custom_alt'      => html_entity_decode($result['custom_alt'], ENT_QUOTES, 'UTF-8'),]]></add>
+        </operation>
 		
-	</file>	
+    </file>	
 	
 
 </modification>
