@@ -90,14 +90,14 @@ if ((!isset($_GET['token'])) || ($_GET['token'] != $session->data['token'])) 	{
 			$bef = array("%", "_","\"","'","\\", "\r", "\n");
 			$aft = array("", " ", " ", " ", "", "", "");
 			
-			$ncategory = trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['cname']), ENT_COMPAT, "UTF-8")));
-			$nproduct = trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['pname']), ENT_COMPAT, "UTF-8")));
-			$model = trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['model']), ENT_COMPAT, "UTF-8")));
-			$sku = trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['sku']), ENT_COMPAT, "UTF-8")));
-			$upc = trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['upc']), ENT_COMPAT, "UTF-8")));
-			$sentence = trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,first_sentence($product['pdescription'])), ENT_COMPAT, "UTF-8")));
-			$brand = trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['brand']), ENT_COMPAT, "UTF-8")));
-			$price = trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft, number_format($product['price'], 2)), ENT_COMPAT, "UTF-8")));
+			$ncategory = trim((html_entity_decode(str_replace($bef, $aft,$product['cname']), ENT_COMPAT, "UTF-8")));
+			$nproduct = trim((html_entity_decode(str_replace($bef, $aft,$product['pname']), ENT_COMPAT, "UTF-8")));
+			$model = trim((html_entity_decode(str_replace($bef, $aft,$product['model']), ENT_COMPAT, "UTF-8")));
+			$sku = trim((html_entity_decode(str_replace($bef, $aft,$product['sku']), ENT_COMPAT, "UTF-8")));
+			$upc = trim((html_entity_decode(str_replace($bef, $aft,$product['upc']), ENT_COMPAT, "UTF-8")));
+			$sentence = trim((html_entity_decode(str_replace($bef, $aft,first_sentence($product['pdescription'])), ENT_COMPAT, "UTF-8")));
+			$brand = trim((html_entity_decode(str_replace($bef, $aft,$product['brand']), ENT_COMPAT, "UTF-8")));
+			$price = trim((html_entity_decode(str_replace($bef, $aft, number_format($product['price'], 2)), ENT_COMPAT, "UTF-8")));
 			
 			$bef = array("%c", "%p", "%m", "%s", "%u", "%f", "%b", "%$");
 			$aft = array($ncategory, $nproduct, $model, $sku, $upc, $sentence, $brand, $price);

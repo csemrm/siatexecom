@@ -80,12 +80,12 @@ if ((!isset($_GET['token'])) || ($_GET['token'] != $session->data['token'])) 	{
 			
 			$tags = array();
 			
-			if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['pname']), ENT_COMPAT, "UTF-8")))));}
-			if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['cname']), ENT_COMPAT, "UTF-8")))));}
-			if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['sku']), ENT_COMPAT, "UTF-8")))));}
-			if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['model']), ENT_COMPAT, "UTF-8")))));}
-			if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['upc']), ENT_COMPAT, "UTF-8")))));}
-			if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(html_entity_decode(str_replace($bef, $aft,$product['brand']), ENT_COMPAT, "UTF-8")))));}
+			if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim((html_entity_decode(str_replace($bef, $aft,$product['pname']), ENT_COMPAT, "UTF-8")))));}
+			if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim((html_entity_decode(str_replace($bef, $aft,$product['cname']), ENT_COMPAT, "UTF-8")))));}
+			if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim((html_entity_decode(str_replace($bef, $aft,$product['sku']), ENT_COMPAT, "UTF-8")))));}
+			if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim((html_entity_decode(str_replace($bef, $aft,$product['model']), ENT_COMPAT, "UTF-8")))));}
+			if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim((html_entity_decode(str_replace($bef, $aft,$product['upc']), ENT_COMPAT, "UTF-8")))));}
+			if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim((html_entity_decode(str_replace($bef, $aft,$product['brand']), ENT_COMPAT, "UTF-8")))));}
 			
 			$keywords = '';
 			

@@ -103,7 +103,7 @@ if ((!isset($_GET['token'])) || ($_GET['token'] != $session->data['token'])) 	{
 				{
 				echo 'Renaming for <b>'.$product['name'].' </b> -------- Image: '. $new_image .'<br> ';
 				rename(DIR_IMAGE.$old_image, DIR_IMAGE.$new_image);
-				$old_image = mysql_real_escape_string($old_image);
+				$old_image = ($old_image);
 				
 				$query = $db->query("update " . DB_PREFIX . "product set image = '".$new_image."' where image ='".$old_image."'");
 				$query = $db->query("update " . DB_PREFIX . "product_image set image = '".$new_image."' where image ='".$old_image."'");
@@ -144,7 +144,7 @@ if ((!isset($_GET['token'])) || ($_GET['token'] != $session->data['token'])) 	{
 				{
 				echo 'Renaming for <b>'.$product['name'].' </b> -------- Image: '. $new_image .'<br> ';
 				rename(DIR_IMAGE.$old_image, DIR_IMAGE.$new_image);
-				$old_image = mysql_real_escape_string($old_image);
+				$old_image = ($old_image);
 				
 				$query = $db->query("update " . DB_PREFIX . "product set image = '".$new_image."' where image ='".$old_image."'");
 				$query = $db->query("update " . DB_PREFIX . "product_image set image = '".$new_image."' where image ='".$old_image."'");

@@ -85,12 +85,12 @@ if ((!isset($_GET['token'])) || ($_GET['token'] != $session->data['token'])) 	{
 			$bef = array("%", "_","\"","'","\\",",");
 			$aft = array("", " ", " ", " ", "", "");
 			
-			if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
-			if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
-			if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
-			if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
-			if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
-			if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
+			if (in_array("p", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))));}
+			if (in_array("c", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['cname']))))));}
+			if (in_array("s", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['sku']))))));}
+			if (in_array("m", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['model']))))));}
+			if (in_array("u", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['upc']))))));}
+			if (in_array("b", $included)) {$tags = array_merge($tags, explode(' ',trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['brand']))))));}
 			
 			foreach ($tags as $tag)
 				{

@@ -97,7 +97,7 @@ if ((!isset($_GET['token'])) || ($_GET['token'] != $session->data['token'])) 	{
 							as relevance, rel.rlv from " . DB_PREFIX . "product p 
 							inner join " . DB_PREFIX . "product_description pd on p.product_id = pd.product_id
 							inner join " . DB_PREFIX . "product_to_category pc on p.product_id = pc.product_id
-							inner join (SELECT product_id, MATCH(name, description) AGAINST ('". strip_tags(trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))) . ' ' . strip_tags(trim(mysql_real_escape_string(htmlspecialchars_decode(str_replace($bef, $aft,$product['pdescription']))))) ."') as rlv FROM " . DB_PREFIX . "product_description) as rel on rel.product_id = p.product_id  
+							inner join (SELECT product_id, MATCH(name, description) AGAINST ('". strip_tags(trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pname']))))) . ' ' . strip_tags(trim((htmlspecialchars_decode(str_replace($bef, $aft,$product['pdescription']))))) ."') as rlv FROM " . DB_PREFIX . "product_description) as rel on rel.product_id = p.product_id  
 							group by p.product_id
 							having p.product_id <> ". $product['product_id'] ." and relevance >= 5 and p.product_id not in (select related_id from " . DB_PREFIX . "product_related where product_id = ". $product['product_id'] .")
 							order by relevance desc
