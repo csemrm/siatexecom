@@ -16,3 +16,20 @@ border:solid 1px #000;
 background:url(edit.png) right no-repeat #80C8E5;
 cursor:pointer;
 }
+.mgt-serp-editor-preview-title a {
+  color: #1122cc;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  overflow: hidden;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.mgt-serp-editor-preview-url {
+  color: #009933;
+}
+.mgt-serp-editor-tip {
+  color: #666666;
+  float: left;
+  display: none;
+}

@@ -43,15 +43,15 @@
 	 
     <file name="catalog/controller/product/product.php">
         <operation>
-            <search position="replace"><![CDATA[$this->data['heading_title'] = $product_info['name'];]]></search>
-            <add><![CDATA[$this->data['heading_title'] = ($product_info['custom_h1'] == '')? $product_info['name']: $product_info['custom_h1'];]]></add>
+            <search position="before"><![CDATA[$this->data['heading_title'] = $product_info['name'];]]></search>
+            <add><![CDATA[$this->data['custom_h1'] = ($product_info['custom_h1'] == '')? $product_info['name']: $product_info['custom_h1'];]]></add>
         </operation>		
     </file>
 
     <file name="catalog/view/theme/*/template/product/product.tpl">
         <operation>
-            <search position="replace"><![CDATA[<h2><?php echo $heading_title; ?></h2>]]></search>
-            <add><![CDATA[<h1><?php echo $heading_title; ?></h1>]]></add>
+            <search position="before"><![CDATA[<h2><?php echo $heading_title; ?></h2>]]></search>
+            <add><![CDATA[<h1><?php echo $custom_h1; ?></h1>]]></add>
         </operation>		
     </file> 	
     <file name="admin/controller/catalog/product.php">
@@ -128,7 +128,7 @@
     </file>
     <file name="admin/view/template/catalog/seoeditor.tpl">
         <operation>
-            <search position="before"><![CDATA[<td class="left"  style="width:220px;"><?php if ($sort == 'meta_keyword') { ?>]]></search>
+            <search position="before"><![CDATA[<td class="left"  style="width:220px;"><?php if ($sort == 'tags') { ?>]]></search>
             <add><![CDATA[
 			<td class="left"  style="width:220px;"><?php if ($sort == 'custom_h1') { ?>
                 <a href="<?php echo $sort_custom_h1; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_custom_h1; ?></a>
@@ -138,11 +138,11 @@
 			]]></add>
         </operation>		
         <operation>
-            <search position="before"><![CDATA[<td><input type="text" name="filter_meta_keyword" value="<?php echo $filter_meta_keyword; ?>" /></td>]]></search>
+            <search position="before"><![CDATA[<td><input type="text" name="filter_tags" value="<?php echo $filter_tags; ?>" /></td>]]></search>
             <add><![CDATA[<td><input type="text" name="filter_custom_h1" value="<?php echo $filter_custom_h1; ?>" /></td>]]></add>
         </operation>		
         <operation>
-            <search position="before"><![CDATA[<?php if ($product['meta_keyword'] <> -1) { ?>]]></search>
+            <search position="before"><![CDATA[<?php if ($product['tags'] <> -1) { ?>]]></search>
             <add><![CDATA[
 			<?php if ($product['custom_h1'] <> -1) { ?>
 				   <td class="edit_td">
@@ -159,7 +159,7 @@
             <add><![CDATA[textarea style="width:180px;" class="editbox"]]></add>
         </operation>		
         <operation>
-            <search position="before"><![CDATA[var filter_meta_keyword = $('input[name=\'filter_meta_keyword\']').attr('value');]]></search>
+            <search position="before"><![CDATA[var filter_tags = $('input[name=\'filter_tags\']').attr('value');]]></search>
             <add><![CDATA[
 			var filter_custom_h1 = $('input[name=\'filter_custom_h1\']').attr('value');
 	
@@ -168,7 +168,7 @@
 			}]]></add>
         </operation>		
         <operation>
-            <search position="before"><![CDATA[$('input[name=\'filter_meta_keyword\']').autocomplete({]]></search>
+            <search position="before"><![CDATA[$('input[name=\'filter_tags\']').autocomplete({]]></search>
             <add><![CDATA[
 			$('input[name=\'filter_custom_h1\']').autocomplete({
 				delay: 0,

@@ -209,6 +209,7 @@
 				   <td class="edit_td">
 					<span id="custom_title_<?php echo $product['type'].$product['id']; ?>" class="text"><?php echo $product['custom_title']; ?></span>
 					<textarea class="editbox" id="custom_title_input_<?php echo $product['type'].$product['id']; ?>"/><?php echo $product['custom_title']; ?></textarea>
+                                        <div id="tips_custom_title_input_<?php echo $product['type'].$product['id']; ?>" class="mgt-serp-editor-tip"><b>Tip:</b> Google limits SERP titles by pixel width, not by character count <span id="count_custom_title_input_<?php echo $product['type'].$product['id']; ?>" style="color: red"> </span></div>
 				  </td>
 			  <?php } else { ?>
 					<td class="left" style="background:lightgrey"></td>

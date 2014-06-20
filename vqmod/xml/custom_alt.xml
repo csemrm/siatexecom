@@ -129,7 +129,7 @@
     </file>
     <file name="admin/view/template/catalog/seoeditor.tpl">
         <operation>
-            <search position="before"><![CDATA[<td class="left"  style="width:220px;"><?php if ($sort == 'meta_keyword') { ?>]]></search>
+            <search position="before"><![CDATA[<td class="left"  style="width:220px;"><?php if ($sort == 'tags') { ?>]]></search>
             <add><![CDATA[
 			<td class="left"  style="width:220px;"><?php if ($sort == 'custom_alt') { ?>
                 <a href="<?php echo $sort_custom_alt; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_custom_alt; ?></a>
@@ -139,11 +139,11 @@
 			]]></add>
         </operation>		
         <operation>
-            <search position="before"><![CDATA[<td><input type="text" name="filter_meta_keyword" value="<?php echo $filter_meta_keyword; ?>" /></td>]]></search>
+            <search position="before"><![CDATA[<td><input type="text" name="filter_tags" value="<?php echo $filter_tags; ?>" /></td>]]></search>
             <add><![CDATA[<td><input type="text" name="filter_custom_alt" value="<?php echo $filter_custom_alt; ?>" /></td>]]></add>
         </operation>		
         <operation>
-            <search position="before"><![CDATA[<?php if ($product['meta_keyword'] <> -1) { ?>]]></search>
+            <search position="before"><![CDATA[<?php if ($product['tags'] <> -1) { ?>]]></search>
             <add><![CDATA[
 			<?php if ($product['custom_alt'] <> -1) { ?>
 				   <td class="edit_td">
