@@ -93,15 +93,17 @@
                         <td class="left"><?php echo $product['type']; ?></td>
                         <td class="left"><?php echo $product['name']; ?></td>
                         <td class="left">
+                            <?php if($product['type'] ==='Product'){ ?>
                             <div class="mgt-serp-editor-preview" style="width:100%;">
                                 <div class="mgt-serp-editor-preview-title">
                                     <a href="#" id="serp_custom_title_input_<?php echo $product['type'].$product['id']; ?>"><?php echo (strlen($product['custom_title']) > 70) ? substr($product['custom_title'],0,70).'...' :  $product['custom_title']; ?></a>
                                 </div>
-                                <div id="serp_keyword_input_<?php echo $product['type'].$product['id']; ?>" class="mgt-serp-editor-preview-url"> 
-                                    <?php echo $product['keyword'] ?>
+                                <div class="mgt-serp-editor-preview-url"><?= HTTP_CATALOG ?><span id="serp_keyword_input_<?php echo $product['type'].$product['id']; ?>" ><?php echo $product['keyword'] ?>
+                                </span>
                                 </div>
                                 <div id="serp_meta_description_input_<?php echo $product['type'].$product['id']; ?>" class="mgt-serp-editor-preview-description"><?php echo (strlen($product['meta_description']) > 156) ? substr($product['meta_description'],0,156).'...' :  $product['meta_description']; ?></div>
                             </div>
+                            <?php } ?> 
                         </td>
                         <td class="edit_td">
                             <span id="keyword_<?php echo $product['type'].$product['id']; ?>" class="text"><?php echo $product['keyword']; ?></span>

@@ -1,0 +1,136 @@
+a:hover, header .top .top-right #cart_block .content ul.items-in-shopping-cart li .price, header .top .top-right #cart_block .content ul.items-in-shopping-cart li .price, header .top .top-right .language-currency .switcher .option ul li a:hover, .navigation_container nav > ul > li:hover > a, .navigation_container nav > ul > li > .sub-menu > ul > li:hover > a, .navigation_container nav > ul > li > .sub-menu > ul > li > .sub-menu a:hover, .navigation_container nav > ul > li > .sub-menu > ul > li > .sub-menu a:hover, .products-grid > div .price, header .top .top-right #cart_block .content .saldo-action .saldo ul li span {
+	color:#5c5992;
+}
+header .top .top-right #cart_block .content ul.items-in-shopping-cart li .close:hover {
+	background-color:#00a498;
+}
+ul.tweet_list li .tweet_text a {
+	color:#bc2f36;
+}
+header .top .top-right #cart_block .content, header .top .top-right .language-currency .switcher .option ul, .navigation_container nav > ul > li > .sub-menu {
+	border-top:5px solid #00a498;
+}
+.navigation_container nav > ul > li > .sub-menu .sub-menu {
+	border-left:5px solid #00a498;
+}
+.navigation_container nav > ul > li > .sub-menu .sub-menu .arrow-categories {
+	background:url(../img/color_3/arrow_categories2.png) no-repeat;
+}
+header .top .top-right #cart_block .content .content-arrow, .navigation_container nav > ul > li > .sub-menu > .arrow-categories {
+	background:url(../img/color_3/arrow_categories.png) no-repeat;
+}
+header .top .top-right .language-currency .switcher .option .option-icon {
+	background:url(../img/color_3/arrow_categories.png) 37px 0px no-repeat;
+}
+/* Header -> Top -> Top Right -> Wishlist */
+
+header .top .top-right .wishlist {
+	background-color:#5c5992;
+}
+header .top .top-right .wishlist:hover {
+	background-color:#cb4249;
+}
+/* Header -> Top -> Top Right -> Cart */
+
+header .top .top-right #cart_block {
+	background-color:#5c5992;
+}
+header .top .top-right #cart_block:hover {
+	background-color:#01b5a8;
+}
+/* Navigation -> Search */
+
+.navigation_container .search input.enterkey:focus {
+	border:1px solid #5c5992;
+}
+.button, .button-slider {
+	background:#bc2f36;
+}
+.button:hover, .button-slider:hover {
+	background:#cb4249;
+}
+.button-two, .button-slider2 {
+	background:#00a498;
+}
+.button-two:hover, .button-slider2:hover {
+	background:#01b5a8;
+}
+/* Product hover */
+
+.products-grid > div:hover {
+	border:1px solid #5d5a92;
+}
+/* Add to Cart */
+
+.products-grid > div .on-hover .add-to-cart {
+	background-color:#5c5992;
+}
+.products-grid > div .on-hover .add-to-cart:hover {
+	background-color:#01b5a8;
+}
+/* Footer -> Custom Footer */
+
+footer #custom-footer {
+	background:#fcfcfc;
+}
+footer #custom-footer > div > div > div h3 {
+	color:#5c5992;
+}
+/* Footer -> Custom Footer -> About us */
+
+footer #custom-footer > div > div > div h3.about-us {
+	background:url(../img/color_3/icon-about-us.png) 0px 9px no-repeat;
+}
+/* Footer -> Custom Footer -> Contact */
+
+footer #custom-footer > div > div > div h3.contact {
+	background:url(../img/color_3/icon-contact.png) 0px 13px no-repeat;
+}
+/* Footer -> Custom Footer -> Twitter */
+
+footer #custom-footer > div > div > div h3.twitter {
+	background:url(../img/color_3/icon-contact.png) 0px 9px no-repeat;
+}
+/* Footer -> Custom Footer -> Facebook */
+
+footer #custom-footer > div > div > div h3.facebook {
+	background:url(../img/color_3/icon-facebook.png) 0px 9px no-repeat;
+}
+/* NAVIGATION */
+
+.navigation_container {
+	background:#efefef;
+}
+.navigation_container nav > ul > li > a {
+	color:#949494;
+	font-weight:normal;
+}
+.navigation_container nav > ul > li:hover > a {
+	color:#5c5992;
+}
+.navigation_container nav > ul > li > a.home {
+	background:url(../img/color_3/home.png) 5px 23px no-repeat;
+}
+/* Mobile Navigation */
+
+.mobile-navigation .click-menu {
+	/*background:url(../img/color_3/home.png) 20px 23px no-repeat;*/
+	color:#949494;
+}
+.mobile-navigation .click-menu:hover {
+	background-color:#01b5a8;
+}
+.mobile-navigation .categories-mobile-links ul li {
+/*border-top:1px solid #009389;*/
+}
+.mobile-navigation .categories-mobile-links > ul > li > a {
+/*color:#fff;*/
+}
+.mobile-navigation .categories-mobile-links > ul > li > ul > li > a {
+/*color:#fff;*/
+}
+/* Content -> Banners */
+
+.bg-banners {
+	background:#e8fefd;
+}

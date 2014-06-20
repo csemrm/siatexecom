@@ -45,7 +45,8 @@ $(document).ready(function()
                 cache: false,
                 success: function(html)
                 {
-                    $("#keyword_" + ID).html(keyword);
+                    $("#serp_keyword_input_" + ID).html(html);
+                    $("#keyword_" + ID).html(html);
                     $("#meta_keyword_" + ID).html(meta_keyword);
                     $("#custom_title_" + ID).html(custom_title);
                     $("#custom_h1_" + ID).html(custom_h1);
@@ -76,18 +77,15 @@ $(document).ready(function()
     });
     $(".editbox").keyup(function()
     {
-        var ID = $(this).attr('id');
-        console.log("#serp_" + ID + ' ddd ' + $("#" + ID).val());
+        var ID = $(this).attr('id'); 
         metaTitle = $("#" + ID).val();
         metaTitle.replace(/^\s+|\s+$/g, "").toString();
         
-        if (ID.indexOf('description')>= 0) {
-            console.log('description '+ID.indexOf('description'));
+        if (ID.indexOf('description')>= 0) { 
             if (metaTitle.length > 156) {
                 metaTitle = metaTitle.substring(0, 156) + "...";
             }
-        } else if (ID.indexOf('title') >= 0) {
-            console.log('title '+ID.indexOf('title'));
+        } else if (ID.indexOf('title') >= 0) { 
             if (metaTitle.length > 70) {
                 metaTitle = metaTitle.substring(0, 70) + "...";
             }

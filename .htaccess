@@ -27,7 +27,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|js|css)
 RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]
-
+#RewriteRule ^(.*)\?*$ index.php?_route_=$1 [L,QSA] 
 ### Additional Settings that may need to be enabled for some servers 
 ### Uncomment the commands by removing the # sign in front of it.
 ### If you get an "Internal Server Error 500" after enabling any of the following settings, restore the # as this means your host doesn't allow that.
@@ -52,3 +52,13 @@ RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]
 
 # 7. disable open_basedir limitations
 # php_admin_value open_basedir none
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+
+RewriteCond %{HTTPS} on
+RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
