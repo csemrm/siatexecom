@@ -216,9 +216,13 @@
             <add><![CDATA[cd.meta_keyword, -1,]]></add>
         </operation>	
         <operation>
-            <search position="replace"><![CDATA[-1, -1, -1]]></search>
-            <add><![CDATA[-1, -1, -1, -1]]></add>
-        </operation>		
+            <search position="replace"><![CDATA[i.information_id, u.keyword, -1, -1, -1]]></search>
+            <add><![CDATA[i.information_id, u.keyword, -1, -1, -1, -1]]></add>
+        </operation>
+        <operation>
+            <search position="replace"><![CDATA[m.manufacturer_id, u.keyword, -1,]]></search>
+            <add><![CDATA[m.manufacturer_id, u.keyword, -1, -1,]]></add>
+        </operation>			
         <operation>
             <search position="after"><![CDATA[$sql .= " AND 1=2";]]></search>
             <add><![CDATA[
@@ -257,7 +261,7 @@
         <operation>
             <search position="before"><![CDATA[$this->data['column_meta_keyword'] = $this->language->get('column_meta_keyword');]]></search>
             <add><![CDATA[
-			$this->data['column_custom_alt'] = 'Custom Title';]]></add>
+			$this->data['column_custom_alt'] = 'Custom Alt';]]></add>
         </operation>
         <operation>
             <search position="before"><![CDATA[$this->data['sort_meta_keyword'] = $this->url->link('catalog/seoeditor', 'token=' . $this->session->data['token'] . '&sort=meta_keyword' . $url, 'SSL');]]></search>

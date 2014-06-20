@@ -276,8 +276,12 @@
 			<add><![CDATA[cd.meta_keyword, -1,]]></add>
 		</operation>	
 		<operation>
-			<search position="replace"><![CDATA[-1, -1, -1]]></search>
-			<add><![CDATA[-1, -1, -1, -1]]></add>
+			<search position="replace"><![CDATA[i.information_id, u.keyword, -1, -1, -1]]></search>
+			<add><![CDATA[i.information_id, u.keyword, -1, -1, -1, -1]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[m.manufacturer_id, u.keyword, -1,]]></search>
+			<add><![CDATA[m.manufacturer_id, u.keyword, -1, -1,]]></add>
 		</operation>		
 		<operation>
 			<search position="after"><![CDATA[$sql .= " AND 1=2";]]></search>
