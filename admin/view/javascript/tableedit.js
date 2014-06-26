@@ -77,22 +77,73 @@ $(document).ready(function()
     });
     $(".editbox").keyup(function()
     {
-        var ID = $(this).attr('id'); 
+        var ID = $(this).attr('id');
         metaTitle = $("#" + ID).val();
         metaTitle.replace(/^\s+|\s+$/g, "").toString();
-        
-        if (ID.indexOf('description')>= 0) { 
+
+        if (ID.indexOf('description') >= 0) {
             if (metaTitle.length > 156) {
                 metaTitle = metaTitle.substring(0, 156) + "...";
             }
-        } else if (ID.indexOf('title') >= 0) { 
+        } else if (ID.indexOf('title') >= 0) {
             if (metaTitle.length > 70) {
                 metaTitle = metaTitle.substring(0, 70) + "...";
             }
 
         }
-         $("#count_" + ID).html(metaTitle.length);
+        $("#count_" + ID).html(metaTitle.length);
         $("#serp_" + ID).html(metaTitle);
 
     });
-}); 
+
+    $("#custom_title").keyup(function()
+    {
+        metaTitle = $(this).val();
+        metaTitle.replace(/^\s+|\s+$/g, "").toString();
+        if (metaTitle.length > 70) {
+            metaTitle = metaTitle.substring(0, 70) + "...";
+        }
+        console.log(metaTitle);
+        $("#serp_custom_title_input").html(metaTitle);
+
+    });
+    $("#meta_description").keyup(function()
+    {
+        metaTitle = $(this).val();
+        metaTitle.replace(/^\s+|\s+$/g, "").toString();
+        if (metaTitle.length > 156) {
+            metaTitle = metaTitle.substring(0, 156) + "...";
+        }
+        console.log(metaTitle);
+        $("#serp_meta_description_input").html(metaTitle);
+
+    });
+    $("#keyword").keyup(function()
+    {
+        metaTitle = $(this).val();
+        metaTitle.replace(/^\s+|\s+$/g, "").toString();
+
+        console.log(metaTitle);
+        $("#serp_keyword_input").html(metaTitle);
+
+    });
+    $("#meta_keyword").keyup(function()
+    {
+        keyword = $(this).val();
+
+        keyword = keyword.replace(/^\s+|\s+$/g, "").toString();
+        keyword = keyword.replace(/,/ig, "");
+        keyword = keyword.split(" ");
+//        console.log("keyword" + keyword);
+        var serp_meta_description = $('#serp_meta_description_input').text();
+        console.log("serp_meta_description " + serp_meta_description);
+        for (var i = 0; i < keyword.length; i++) {
+            var key = keyword[i];
+            console.log("keyword " + key);
+            serp_meta_description = serp_meta_description.replace(new RegExp(key, 'g'), "<b>" + key + "</b>");
+        }
+        console.log(serp_meta_description);
+        $("#serp_meta_description_input").html(serp_meta_description);
+    });
+});
+ 

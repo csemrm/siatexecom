@@ -1,0 +1,42 @@
+<modification>
+
+    <id>SEO VIEW</id>
+    <version>1.0.0</version>
+    <vqmver>2.1.5</vqmver>
+    <author>milon</author>
+	
+	 
+    <file name="admin/view/template/catalog/product_form.tpl">
+         <operation>
+            <search position="replace"><![CDATA[<input type="text" name="keyword" value="<?php echo $keyword; ?>"  size="100"/></td>]]></search>
+            <add><![CDATA[<input type="text" name="keyword" id="keyword" value="<?php echo $keyword; ?>"  size="100"/></td>]]></add>
+        </operation>
+        <operation>
+            <search position="replace"><![CDATA[<textarea name="product_description[<?php echo $language['language_id']; ?>][meta_keyword]" cols="40" rows="5"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['meta_keyword'] : ''; ?></textarea>]]></search>
+            <add><![CDATA[<textarea id="meta_keyword" name="product_description[<?php echo $language['language_id']; ?>][meta_keyword]" cols="40" rows="5"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['meta_keyword'] : ''; ?></textarea>]]></add>
+        </operation>
+        <operation>
+            <search position="replace"><![CDATA[<textarea name="product_description[<?php echo $language['language_id']; ?>][meta_description]" cols="40" rows="5"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['meta_description'] : ''; ?></textarea>]]></search>
+            <add><![CDATA[<textarea id="meta_description" name="product_description[<?php echo $language['language_id']; ?>][meta_description]" cols="40" rows="5"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['meta_description'] : ''; ?></textarea>]]></add>
+        </operation>
+        <operation>
+            <search position="before"><![CDATA[<td><?php echo $entry_description; ?></td>]]></search>
+            <add><![CDATA[<td colspan="2" class="googleserp" >
+			  <div class="mgt-serp-editor-preview" style="width:100%;">
+                                <div class="mgt-serp-editor-preview-title">
+                                    <a href="#" id="serp_custom_title_input"><?php echo (strlen($product_description[$language['language_id']]['custom_title']) > 70) ? substr($product_description[$language['language_id']]['custom_title'],0,70).'...' : $product_description[$language['language_id']]['custom_title']; ?></a>
+                                </div>
+                                <div class="mgt-serp-editor-preview-url"><?= HTTP_CATALOG ?><span id="serp_keyword_input" ><?php echo $keyword ?>
+                                </span>
+                                </div>
+                                <div id="serp_meta_description_input" class="mgt-serp-editor-preview-description"><?php echo (strlen($product_description[$language['language_id']]['meta_description']) > 156) ? substr($product_description[$language['language_id']]['meta_description'],0,156).'...' : $product_description[$language['language_id']]['meta_description']; ?></div>
+                            </div></td>
+              </tr>
+              <tr>]]></add>
+        </operation>			
+    </file>	
+	 	
+	
+
+</modification>
+
