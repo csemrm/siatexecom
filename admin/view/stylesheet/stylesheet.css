@@ -560,12 +560,13 @@ table.form > tbody > tr > td {
     top: 3px;
 }
 .googleserp {
-    background: url("../image/google_preview.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-    height: 365px;
-    padding: 115px 0 0 170px !important;
+   // background: url("../image/google_preview.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    padding: 15px 0 0 170px !important;
     vertical-align: top;
     width: 750px !important;
 }
 .mgt-serp-editor-preview-description{
     width: 600px;
+    word-wrap: break-word;
+        
 }

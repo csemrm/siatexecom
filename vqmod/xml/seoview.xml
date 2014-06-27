@@ -5,9 +5,15 @@
     <vqmver>2.1.5</vqmver>
     <author>milon</author>
 	
-	 
+    <file name="admin/view/template/common/header.tpl">
+        <operation>
+            <search position="after"><![CDATA[<script type="text/javascript" src="view/javascript/jquery/jquery]]></search>
+            <add><![CDATA[<script type="text/javascript" src="view/javascript/jquery.highlight.js"></script>]]></add>
+        </operation>
+        	
+    </file>		 
     <file name="admin/view/template/catalog/product_form.tpl">
-         <operation>
+        <operation>
             <search position="replace"><![CDATA[<input type="text" name="keyword" value="<?php echo $keyword; ?>"  size="100"/></td>]]></search>
             <add><![CDATA[<input type="text" name="keyword" id="keyword" value="<?php echo $keyword; ?>"  size="100"/></td>]]></add>
         </operation>
@@ -17,8 +23,16 @@
         </operation>
         <operation>
             <search position="replace"><![CDATA[<textarea name="product_description[<?php echo $language['language_id']; ?>][meta_description]" cols="40" rows="5"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['meta_description'] : ''; ?></textarea>]]></search>
-            <add><![CDATA[<textarea id="meta_description" name="product_description[<?php echo $language['language_id']; ?>][meta_description]" cols="40" rows="5"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['meta_description'] : ''; ?></textarea>]]></add>
+            <add><![CDATA[<textarea id="meta_description" name="product_description[<?php echo $language['language_id']; ?>][meta_description]" cols="40" rows="5"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['meta_description'] : ''; ?></textarea>
+                <br/><span id="meta_description_count"><?php echo strlen($product_description[$language['language_id']]['meta_description']); ?></span> characters used (156 char max)]]></add>
         </operation>
+        <operation>
+            <search position="before"><![CDATA[<td><?php echo $entry_keyword; ?></td>]]></search>
+            <add><![CDATA[<td>Search</td>
+			<td><input type="text" id="meta_search"  size="100"  /></td>
+              </tr>
+              <tr>]]></add>
+        </operation>	
         <operation>
             <search position="before"><![CDATA[<td><?php echo $entry_description; ?></td>]]></search>
             <add><![CDATA[<td colspan="2" class="googleserp" >
@@ -30,7 +44,11 @@
                                 </span>
                                 </div>
                                 <div id="serp_meta_description_input" class="mgt-serp-editor-preview-description"><?php echo (strlen($product_description[$language['language_id']]['meta_description']) > 156) ? substr($product_description[$language['language_id']]['meta_description'],0,156).'...' : $product_description[$language['language_id']]['meta_description']; ?></div>
-                            </div></td>
+                           <br/>
+                
+                           <br/><b>Meta Tag Keywords:</b><br/>
+                                <div id="serp_meta_keyword_input" class="mgt-serp-editor-preview-description"><?php echo   $product_description[$language['language_id']]['meta_keyword']; ?></div>
+                               </div></td>
               </tr>
               <tr>]]></add>
         </operation>			

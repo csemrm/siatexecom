@@ -100,10 +100,11 @@ $(document).ready(function()
     {
         metaTitle = $(this).val();
         metaTitle.replace(/^\s+|\s+$/g, "").toString();
+        $("#custom_title_count").html(metaTitle.length);
         if (metaTitle.length > 70) {
             metaTitle = metaTitle.substring(0, 70) + "...";
         }
-        console.log(metaTitle);
+
         $("#serp_custom_title_input").html(metaTitle);
 
     });
@@ -111,39 +112,46 @@ $(document).ready(function()
     {
         metaTitle = $(this).val();
         metaTitle.replace(/^\s+|\s+$/g, "").toString();
+        $("#meta_description_count").html(metaTitle.length);
         if (metaTitle.length > 156) {
             metaTitle = metaTitle.substring(0, 156) + "...";
         }
         console.log(metaTitle);
+
         $("#serp_meta_description_input").html(metaTitle);
+
+    });
+
+    $("#meta_keyword").keyup(function()
+    {
+        metaTitle = $(this).val();
+        metaTitle.replace(/^\s+|\s+$/g, "").toString();
+
+        console.log(metaTitle);
+        $("#serp_meta_keyword_input").html(metaTitle);
 
     });
     $("#keyword").keyup(function()
     {
         metaTitle = $(this).val();
         metaTitle.replace(/^\s+|\s+$/g, "").toString();
-
+        metaTitle = metaTitle.replace(" ", '_');
         console.log(metaTitle);
         $("#serp_keyword_input").html(metaTitle);
+        $("#keyword").val(metaTitle);
 
     });
-    $("#meta_keyword").keyup(function()
+    $("#meta_search").keyup(function()
     {
         keyword = $(this).val();
-
-        keyword = keyword.replace(/^\s+|\s+$/g, "").toString();
-        keyword = keyword.replace(/,/ig, "");
+        keyword = keyword.replace(/^\s+|\s+$/g, "");
+        $('.googleserp').unhighlight();
         keyword = keyword.split(" ");
-//        console.log("keyword" + keyword);
-        var serp_meta_description = $('#serp_meta_description_input').text();
-        console.log("serp_meta_description " + serp_meta_description);
         for (var i = 0; i < keyword.length; i++) {
-            var key = keyword[i];
-            console.log("keyword " + key);
-            serp_meta_description = serp_meta_description.replace(new RegExp(key, 'g'), "<b>" + key + "</b>");
+            var key = keyword[i];  
+            $('.googleserp').highlight(key);
         }
-        console.log(serp_meta_description);
-        $("#serp_meta_description_input").html(serp_meta_description);
     });
+
 });
  

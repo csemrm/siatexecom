@@ -1,35 +1,38 @@
 
 .editbox
 {
-display:none
+    display:none
 }
 .editbox
 {
-font-size:12px;
-width:220px;
-background-color:#ffffcc;
-border:solid 1px #000;
+    font-size:12px;
+    width:220px;
+    background-color:#ffffcc;
+    border:solid 1px #000;
 
 }
 .edit_tr:hover
 {
-background:url(edit.png) right no-repeat #80C8E5;
-cursor:pointer;
+    background:url(edit.png) right no-repeat #80C8E5;
+    cursor:pointer;
 }
 .mgt-serp-editor-preview-title a {
-  color: #1122cc;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  overflow: hidden;
-  text-decoration: underline;
-  white-space: nowrap;
+    color: #1122cc;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: normal;
+    overflow: hidden;
+    text-decoration: underline;
+    white-space: nowrap;
 }
 .mgt-serp-editor-preview-url {
-  color: #009933;
+    color: #009933;
 }
 .mgt-serp-editor-tip {
-  color: #666666;
-  float: left;
-  display: none;
+    color: #666666;
+    float: left;
+    display: none;
+}
+.highlight {
+    font-weight: bold;
 }
