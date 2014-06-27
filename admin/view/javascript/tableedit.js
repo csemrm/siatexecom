@@ -149,7 +149,7 @@ $(document).ready(function()
         keyword = keyword.split(" ");
         for (var i = 0; i < keyword.length; i++) {
             var key = keyword[i];  
-            $('.googleserp').highlight(key);
+            $('.googleserp').highlight(key, { wordsOnly: true });
         }
     });
 

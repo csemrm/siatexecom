@@ -1,0 +1,32 @@
+Generate Google Sitemaps v1.2 for OpenCart using VQMOD
+
+Description
+============
+This module generates google sitemaps for categories, products, and other pages for your website. All the sitemaps will be generated in root sitemaps folder (You have to create this folder).
+In order to use this tool you have to install VQMOD
+
+Installation
+============
+1. Back up the existing file.
+2. Create sitemaps folder in your document root. (Where catalog and admin directories are).
+3. Upload new files to the corresponding directories.
+4. Modify the permission in admin so that you can access Generate Sitemaps in admin.
+5. To generate sitemaps, log into admin. Go to System->Generate Sitemaps. Click on 'Generate' button to create sitemap files.
+
+Files Included
+==============
+admin/controller/tool/generate_sitemap.php
+admin/language/english/tool/generate_sitemap.php
+admin/model/tool/generate_sitemap.php
+admin/model/tool/seo_url.php
+admin/view/template/tool/generate_sitemap.tpl
+sitemaps/gss.css
+sitemaps/gss.js
+sitemaps/gss.xsl
+vqmod/xml/generate_sitemap.xml
+
+Files to Change
+===============
+
+No need to change any file.
+everything will be updated using VQMOD
